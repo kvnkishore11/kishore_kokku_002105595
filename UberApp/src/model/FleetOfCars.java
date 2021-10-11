@@ -63,8 +63,12 @@ public class FleetOfCars {
     }
     
     public int NumberofCars(){
-    
-        for (Car c : allCars.)
+        int i = 0;
+        for (Car c : allCars){
+            i++;
+        
+        }
+        return i ;
     }
     
     
