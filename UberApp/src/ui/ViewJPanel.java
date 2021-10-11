@@ -388,14 +388,15 @@ public class ViewJPanel extends javax.swing.JPanel {
         Car c = new Car();
         c.setNameOfCar(txtNameOfCar.getText());
         c.setModelName(txtModelName.getText());
-        c.setYearOfManufacture(Integer.parseInt(txtYearOfManufacture.getText()));
-        c.setNoOfSeats(Integer.parseInt(txtNoOfSeats.getText()));
+      //  c.setYearOfManufacture(Integer.parseInt(txtYearOfManufacture.getText()));
+      //  c.setNoOfSeats(Integer.parseInt(txtNoOfSeats.getText()));
 //        c.setLocation(txtLocation.getText());
 //        c.setMaintenance(txt.getText());
 //         c.setAvailability();
  
         allCars.updateCar(rowindex,c);
         populateTable();
+        JOptionPane.showMessageDialog(this, "Table Updated");
        
         
        

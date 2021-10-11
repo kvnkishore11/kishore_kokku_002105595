@@ -5,7 +5,9 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import model.FleetOfCars;
+import java.util.ArrayList ;
 
 /**
  *
@@ -54,10 +56,20 @@ public class SimpleSearchJPanel extends javax.swing.JPanel {
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Total Available Cars");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("First Available Car");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Serial Number");
 
@@ -223,6 +235,8 @@ public class SimpleSearchJPanel extends javax.swing.JPanel {
 
     private void txtTotalAvailableCars1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalAvailableCars1ActionPerformed
         // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(this,"last Updated Time is : " + String.valueOf(allCars.size()));
     }//GEN-LAST:event_txtTotalAvailableCars1ActionPerformed
 
     private void txtTotalAvailableCars2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalAvailableCars2ActionPerformed
@@ -231,6 +245,7 @@ public class SimpleSearchJPanel extends javax.swing.JPanel {
 
     private void btnFleetLastUpdated1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFleetLastUpdated1ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"last Updated Time is : " + allCars.lastUpdated);
     }//GEN-LAST:event_btnFleetLastUpdated1ActionPerformed
 
     private void txtFleetLastUpdated1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFleetLastUpdated1ActionPerformed
@@ -244,6 +259,16 @@ public class SimpleSearchJPanel extends javax.swing.JPanel {
     private void txtTotalAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalAvailableCarsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalAvailableCarsActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(this, "Your first car available is : " + allCars.firstCar());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

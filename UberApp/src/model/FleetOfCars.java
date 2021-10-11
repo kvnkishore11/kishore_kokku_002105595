@@ -54,12 +54,17 @@ public class FleetOfCars {
     
     }
 
-    public Car firstCar() {
+    public String firstCar() {
         //To change body of generated methods, choose Tools | Templates.
         Car first = allCars.get(0);
-        return first;
+        return first.nameOfCar + first.modelName ;
 
         
+    }
+    
+    public int NumberofCars(){
+    
+        for (Car c : allCars.)
     }
     
     

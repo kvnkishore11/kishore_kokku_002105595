@@ -298,7 +298,23 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        String  nameOfCar = txtNameOfCar.getText();
+      
+          if(
+                  (txtModelName.getText().isEmpty())||
+                  (txtModelName.getText().isEmpty())||
+                  (txtYearOfManufacture.getText().isEmpty())||
+                  (txtLocation.getText().isEmpty())||
+                  (txtNumberOfSeats.getText().isEmpty())||
+                  (buttonGroup1).getSelection()==null ||
+                  (buttonGroup2).getSelection()==null
+             ){
+                JOptionPane.showMessageDialog(this, "Please fill all the fields!!!");
+                return;
+              
+                }
+          
+         
+        String nameOfCar = txtNameOfCar.getText();
         String  modelName = txtModelName.getText();
         int year = Integer.parseInt(txtYearOfManufacture.getText());
         int seats = Integer.parseInt(txtNumberOfSeats.getText());

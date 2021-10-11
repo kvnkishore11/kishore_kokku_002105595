@@ -59,6 +59,8 @@ public class SearchJPanel extends javax.swing.JPanel {
         cmbLocation = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         cmbAvailability = new javax.swing.JComboBox<>();
+        btnFleetLastUpdated1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(800, 800));
 
@@ -96,7 +98,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         });
 
         cmbNoOfSeats.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbNoOfSeats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbNoOfSeats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         cmbNoOfSeats.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbNoOfSeats.setPreferredSize(new java.awt.Dimension(85, 20));
 
@@ -150,14 +152,43 @@ public class SearchJPanel extends javax.swing.JPanel {
         jLabel6.setText("Availability");
 
         cmbAvailability.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbAvailability.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbAvailability.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "yes", "No" }));
         cmbAvailability.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbAvailability.setPreferredSize(new java.awt.Dimension(85, 20));
+
+        btnFleetLastUpdated1.setBackground(new java.awt.Color(204, 204, 255));
+        btnFleetLastUpdated1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnFleetLastUpdated1.setText("Fleet Last Updated");
+        btnFleetLastUpdated1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFleetLastUpdated1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("First Available Car");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnFleetLastUpdated1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -193,10 +224,6 @@ public class SearchJPanel extends javax.swing.JPanel {
                             .addComponent(cmbAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)))
                 .addContainerGap(35, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(313, 313, 313)
-                .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,9 +260,13 @@ public class SearchJPanel extends javax.swing.JPanel {
                         .addComponent(cmbModelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(27, 27, 27)
                 .addComponent(searchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(btnFleetLastUpdated1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(275, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -255,7 +286,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         }
         else{
              
-            JOptionPane.showMessageDialog(this,"last Updated Time is : " + allCars.lastUpdated);
+            
              populateSearchCars();
         }
                    
@@ -270,15 +301,28 @@ public class SearchJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbNameOfCarActionPerformed
 
+    private void btnFleetLastUpdated1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFleetLastUpdated1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"last Updated Time is : " + allCars.lastUpdated);
+    }//GEN-LAST:event_btnFleetLastUpdated1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(this, "Your first car available is : " + allCars.firstCar());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFilterCars;
+    private javax.swing.JButton btnFleetLastUpdated1;
     private javax.swing.JComboBox<String> cmbAvailability;
     private javax.swing.JComboBox<String> cmbLocation;
     private javax.swing.JComboBox<String> cmbModelName;
     private javax.swing.JComboBox<String> cmbNameOfCar;
     private javax.swing.JComboBox<String> cmbNoOfSeats;
     private javax.swing.JComboBox<String> cmbYearOfManufacture;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

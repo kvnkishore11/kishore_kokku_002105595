@@ -37,7 +37,6 @@ public class MainJFrame extends javax.swing.JFrame {
         btnAddCar = new javax.swing.JButton();
         btnSearchCars = new javax.swing.JButton();
         btnViewCars = new javax.swing.JButton();
-        btnSimpleSearchCars = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,14 +69,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSimpleSearchCars.setBackground(new java.awt.Color(255, 153, 153));
-        btnSimpleSearchCars.setText("SimpleSearch");
-        btnSimpleSearchCars.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimpleSearchCarsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout controlFlowLayout = new javax.swing.GroupLayout(controlFlow);
         controlFlow.setLayout(controlFlowLayout);
         controlFlowLayout.setHorizontalGroup(
@@ -86,9 +77,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAddCar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlFlowLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSimpleSearchCars))
             .addGroup(controlFlowLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlFlowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,11 +94,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnAddCar)
                 .addGap(72, 72, 72)
                 .addComponent(btnViewCars)
-                .addGap(69, 69, 69)
-                .addComponent(btnSimpleSearchCars)
-                .addGap(62, 62, 62)
+                .addGap(157, 157, 157)
                 .addComponent(btnSearchCars)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlFlow);
@@ -122,11 +108,11 @@ public class MainJFrame extends javax.swing.JFrame {
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 688, Short.MAX_VALUE)
+            .addGap(0, 866, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 798, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workArea);
@@ -135,7 +121,7 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,13 +150,6 @@ public class MainJFrame extends javax.swing.JFrame {
         ViewJPanel viewPanel = new ViewJPanel(allCars);
         splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewCarsActionPerformed
-
-    private void btnSimpleSearchCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpleSearchCarsActionPerformed
-        // TODO add your handling code here:
-        SimpleSearchJPanel simplesearchPanel = new SimpleSearchJPanel(allCars);
-        splitPane.setRightComponent(simplesearchPanel);
-
-    }//GEN-LAST:event_btnSimpleSearchCarsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,7 +196,6 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCar;
     private javax.swing.JButton btnSearchCars;
-    private javax.swing.JButton btnSimpleSearchCars;
     private javax.swing.JButton btnViewCars;
     private javax.swing.JPanel controlFlow;
     private javax.swing.JSplitPane splitPane;
