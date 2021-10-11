@@ -177,7 +177,7 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         jButton3.setBackground(new java.awt.Color(204, 204, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setText("Total Cars");
+        jButton3.setText("First Available Car");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -289,7 +289,8 @@ public class SearchJPanel extends javax.swing.JPanel {
                 cmbNameOfCar.getSelectedItem().toString().equals("select") &&
                 cmbModelName.getSelectedItem().toString().equals("select") &&
                 cmbYearOfManufacture.getSelectedItem().toString().equals("0") &&
-                cmbNoOfSeats.getSelectedItem().toString().equals("0")
+                cmbNoOfSeats.getSelectedItem().toString().equals("0") 
+                
 
                 ) {
                 
@@ -384,10 +385,11 @@ public class SearchJPanel extends javax.swing.JPanel {
                 row[3] = car.getSerialNumber();
                 row[4] = car.getNoOfSeats();
                 row[5] = car.getSerialNumber();
-                model.addRow(row);
+               // model.addRow(row);
+               model.insertRow(noOfCarsFiltered, row);
                 System.out.println(car.getSerialNumber());
                 noOfCarsFiltered++ ;
-                JOptionPane.showMessageDialog(this, "No of Cars Filtered : " + String.valueOf(noOfCarsFiltered));
+                //JOptionPane.showMessageDialog(this, "No of Cars Filtered : " + String.valueOf(noOfCarsFiltered));
                 
             }
             
