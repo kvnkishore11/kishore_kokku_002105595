@@ -313,14 +313,29 @@ public class CreateJPanel extends javax.swing.JPanel {
               
                 }
           
-         
-        String nameOfCar = txtNameOfCar.getText();
-        String  modelName = txtModelName.getText();
-        int year = Integer.parseInt(txtYearOfManufacture.getText());
-        int seats = Integer.parseInt(txtNumberOfSeats.getText());
-        String  serialNumber = txtLocation.getText();
-        String location = txtLocation.getText();
-      
+        String nameOfCar,modelName,serialNumber,location = "";
+        try{
+            nameOfCar = txtNameOfCar.getText();
+            modelName = txtModelName.getText();
+            serialNumber = txtLocation.getText();
+            location = txtLocation.getText();
+        }
+        catch (Exception e1){
+            JOptionPane.showMessageDialog(this, "print Valid format for Name of Car, Model Name, Serial Number, Location");
+            return;
+        }
+        
+        int year, seats = 0; 
+        try{
+              year =   Integer.parseInt(txtYearOfManufacture.getText());
+              seats = Integer.parseInt(txtNumberOfSeats.getText());
+        }        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Enter Integer type for Manufacturing year , No. of Seats");
+            return;
+        }
+        
+    
       
         Car car = allCars.addNewCar();
         
@@ -359,12 +374,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtNumberOfSeats.setText("");
         txtLocation.setText("");
         txtSerialNumber.setText("");
-        rdoMaintenanceCertificateNo.setSelected(false);
-        rdoMaintenanceCertificateYes.setSelected(false);
-        rdoAvailabilityNo.setSelected(false);
-        rdoAvailabilityYes.setSelected(false);
-      
-        
+
         
         
         
@@ -390,8 +400,12 @@ public class CreateJPanel extends javax.swing.JPanel {
                 car.setYearOfManufacture(Integer.parseInt(values[2]));
                 car.setNoOfSeats(Integer.parseInt(values[3]));
                 car.setSerialNumber(values[4]);
+                car.setLocation(values[5]);
+                car.setMaintenaceCertificate(values[6]);
+                car.setAvailability(values[7]);
                 i++;
             }
+            
             JOptionPane.showMessageDialog(this, String.valueOf(i) + " Cars are added into View Section");
                         } catch (FileNotFoundException ex)
             {

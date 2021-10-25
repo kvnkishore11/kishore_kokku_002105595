@@ -25,7 +25,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         this.allCars = allCars;
         
         //Initialising the combo boxes with the data
-        populateCombo();
+        populateSerialNumber();
       
        
 
@@ -43,8 +43,6 @@ public class SearchJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        searchJPanel = new javax.swing.JScrollPane();
-        tblSearchCars = new javax.swing.JTable();
         cmbNameOfCar = new javax.swing.JComboBox<>();
         cmbNoOfSeats = new javax.swing.JComboBox<>();
         cmbYearOfManufacture = new javax.swing.JComboBox<>();
@@ -59,36 +57,29 @@ public class SearchJPanel extends javax.swing.JPanel {
         cmbLocation = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         cmbAvailability = new javax.swing.JComboBox<>();
-        btnFleetLastUpdated1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        cmbMaintenanceCertificate = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
+        btnFleetLastUpdated2 = new javax.swing.JButton();
+        cmbSerialNumber = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblFilterCars = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtMinSeats = new javax.swing.JTextField();
+        txtMaxSeats = new javax.swing.JTextField();
+        btnGo = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblMinMax = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(800, 800));
 
-        tblSearchCars.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Name of Car", "Model Name", "Year of Man.", "No. of Seats", "Serial Number", "Location", "Maintenance Certiicate", "Availability"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tblSearchCars.setPreferredSize(new java.awt.Dimension(63, 20));
-        searchJPanel.setViewportView(tblSearchCars);
-
+        cmbNameOfCar.setBackground(new java.awt.Color(153, 153, 255));
         cmbNameOfCar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbNameOfCar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbNameOfCar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "Hyundai", "Honda", "Mercedes", "Audi", "BMW", "lexus", "Toyota", "Tata", "Jaguar", "Volvo" }));
         cmbNameOfCar.setAutoscrolls(true);
         cmbNameOfCar.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbNameOfCar.setPreferredSize(new java.awt.Dimension(85, 20));
@@ -98,23 +89,26 @@ public class SearchJPanel extends javax.swing.JPanel {
             }
         });
 
+        cmbNoOfSeats.setBackground(new java.awt.Color(153, 153, 255));
         cmbNoOfSeats.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbNoOfSeats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        cmbNoOfSeats.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         cmbNoOfSeats.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbNoOfSeats.setPreferredSize(new java.awt.Dimension(85, 20));
 
+        cmbYearOfManufacture.setBackground(new java.awt.Color(153, 153, 255));
         cmbYearOfManufacture.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbYearOfManufacture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbYearOfManufacture.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
         cmbYearOfManufacture.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbYearOfManufacture.setPreferredSize(new java.awt.Dimension(85, 20));
 
+        cmbModelName.setBackground(new java.awt.Color(153, 153, 255));
         cmbModelName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbModelName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbModelName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "Model X", "Model Y", "Model S", "Model 3", "A Class", "B Class", "C Class", "E Class", "S Class" }));
         cmbModelName.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbModelName.setPreferredSize(new java.awt.Dimension(85, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Model Name");
+        jLabel1.setText("Select Serial Number");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Year Of Manufacture");
@@ -144,27 +138,20 @@ public class SearchJPanel extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Location");
 
+        cmbLocation.setBackground(new java.awt.Color(153, 153, 255));
         cmbLocation.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "New Bury Street", "Bollyston Street", "Huntington Avenue", "Smith Street", "Roxbury", "South End", "Assembly", "Ruggles", "Park Drive", "Jamaica Plane" }));
         cmbLocation.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbLocation.setPreferredSize(new java.awt.Dimension(85, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Availability");
+        jLabel6.setText("Maintenance certificate Expiry");
 
+        cmbAvailability.setBackground(new java.awt.Color(153, 153, 255));
         cmbAvailability.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbAvailability.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "yes", "No" }));
+        cmbAvailability.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "yes", "No" }));
         cmbAvailability.setMinimumSize(new java.awt.Dimension(85, 29));
         cmbAvailability.setPreferredSize(new java.awt.Dimension(85, 20));
-
-        btnFleetLastUpdated1.setBackground(new java.awt.Color(204, 204, 255));
-        btnFleetLastUpdated1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnFleetLastUpdated1.setText("Fleet Last Updated");
-        btnFleetLastUpdated1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFleetLastUpdated1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -177,109 +164,275 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         jButton3.setBackground(new java.awt.Color(204, 204, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setText("First Available Car");
+        jButton3.setText("Total Number of cars with Uber");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
+        cmbMaintenanceCertificate.setBackground(new java.awt.Color(153, 153, 255));
+        cmbMaintenanceCertificate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbMaintenanceCertificate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "yes", "No" }));
+        cmbMaintenanceCertificate.setMinimumSize(new java.awt.Dimension(85, 29));
+        cmbMaintenanceCertificate.setPreferredSize(new java.awt.Dimension(85, 20));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Availability");
+
+        btnReset.setBackground(new java.awt.Color(255, 0, 51));
+        btnReset.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(0, 0, 0));
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        btnFleetLastUpdated2.setBackground(new java.awt.Color(204, 204, 255));
+        btnFleetLastUpdated2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnFleetLastUpdated2.setText("Fleet Last Updated");
+        btnFleetLastUpdated2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFleetLastUpdated2ActionPerformed(evt);
+            }
+        });
+
+        cmbSerialNumber.setBackground(new java.awt.Color(153, 153, 255));
+        cmbSerialNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbSerialNumber.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", " " }));
+        cmbSerialNumber.setMinimumSize(new java.awt.Dimension(85, 29));
+        cmbSerialNumber.setPreferredSize(new java.awt.Dimension(85, 20));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Model Name");
+
+        tblFilterCars.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name oF Car", "Model Name", "Year of Manufacture", "No of Seats", "Location", "Availability", "Maintenance Certificate", "Serial Number"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblFilterCars);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Maximum Seats");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("Minimum Seats");
+
+        btnGo.setBackground(new java.awt.Color(204, 204, 255));
+        btnGo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnGo.setText("GO");
+        btnGo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoActionPerformed(evt);
+            }
+        });
+
+        tblMinMax.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Name Of Car", "Model Name", "No of Seats", "Serial Number"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblMinMax);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(313, 313, 313)
-                        .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFleetLastUpdated1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(searchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ttlAddCar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cmbNameOfCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(37, 37, 37)
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbModelName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(cmbYearOfManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(cmbNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cmbNameOfCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
                             .addComponent(jLabel5)
                             .addComponent(cmbLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addGap(133, 133, 133)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(cmbAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                            .addComponent(jLabel7)
+                            .addComponent(cmbAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cmbModelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
+                                .addGap(74, 74, 74))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(162, 162, 162)
+                                        .addComponent(cmbMaintenanceCertificate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(151, 151, 151)
+                                        .addComponent(cmbYearOfManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1))
+                        .addGap(120, 120, 120))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ttlAddCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(jButton3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnFleetLastUpdated2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(146, 146, 146)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMinSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMaxSeats, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnGo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbYearOfManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addComponent(ttlAddCar)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cmbNameOfCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbYearOfManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cmbModelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbMaintenanceCertificate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbNoOfSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmbNameOfCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
                                 .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 20, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbModelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
-                .addComponent(btnFilterCars, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(searchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(btnFleetLastUpdated1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(231, Short.MAX_VALUE))
+                        .addGap(111, 111, 111)
+                        .addComponent(btnFleetLastUpdated2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtMinSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtMaxSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10))
+                                .addGap(38, 38, 38))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(btnGo)
+                                .addGap(52, 52, 52)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -289,9 +442,13 @@ public class SearchJPanel extends javax.swing.JPanel {
                 cmbNameOfCar.getSelectedItem().toString().equals("select") &&
                 cmbModelName.getSelectedItem().toString().equals("select") &&
                 cmbYearOfManufacture.getSelectedItem().toString().equals("0") &&
-                cmbNoOfSeats.getSelectedItem().toString().equals("0") 
+                cmbNoOfSeats.getSelectedItem().toString().equals("0") &&
+                cmbLocation.getSelectedItem().toString().equals("select") &&
+                cmbAvailability.getSelectedItem().toString().equals("select") &&
+                cmbMaintenanceCertificate.getSelectedItem().toString().equals("select") &&
+                cmbSerialNumber.getSelectedItem().toString().equals("select")
                 
-
+     
                 ) {
                 
                 JOptionPane.showMessageDialog(this,"Please select some inputs");
@@ -299,26 +456,15 @@ public class SearchJPanel extends javax.swing.JPanel {
        
         }
         else{
-             
-            
+  
              populateSearchCars();
         }
-                   
-                 
-     
-        
- 
-         
+      
     }//GEN-LAST:event_btnFilterCarsActionPerformed
 
     private void cmbNameOfCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNameOfCarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbNameOfCarActionPerformed
-
-    private void btnFleetLastUpdated1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFleetLastUpdated1ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"last Updated Time is : " + allCars.lastUpdated);
-    }//GEN-LAST:event_btnFleetLastUpdated1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -331,104 +477,169 @@ public class SearchJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Total no of cars with UBER : " + allCars.NumberofCars());
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        // resets the combo box and repopulate the table
+        cmbNameOfCar.setSelectedItem("select");
+        cmbModelName.setSelectedItem("select");
+        cmbYearOfManufacture.setSelectedItem("0");
+        cmbNoOfSeats.setSelectedItem("0");
+        cmbLocation.setSelectedItem("select");
+        cmbAvailability.setSelectedItem("select");
+        cmbMaintenanceCertificate.setSelectedItem("select");
+        cmbSerialNumber.setSelectedItem("select");
+        resetSearch();
+       
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnFleetLastUpdated2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFleetLastUpdated2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, allCars.lastUpdated);
+    }//GEN-LAST:event_btnFleetLastUpdated2ActionPerformed
+
+    private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblMinMax.getModel();
+        model.setRowCount(0);
+        for (Car car : allCars.getAllCars()){
+             if(car.getNoOfSeats() >= Integer.parseInt(txtMinSeats.getText()) &&
+                     car.getNoOfSeats() <= Integer.parseInt(txtMaxSeats.getText())){
+                 
+                Object[] item = new Object[4];
+                item[0] = car ;
+                item[1] = car.getModelName();
+               
+                item[2] = car.getNoOfSeats();
+                item[3] = car.getSerialNumber();
+                
+                model.addRow(item);
+                System.out.println(item[0]);
+                    }
+             
+        }
+        
+
+        
+    }//GEN-LAST:event_btnGoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFilterCars;
-    private javax.swing.JButton btnFleetLastUpdated1;
+    private javax.swing.JButton btnFleetLastUpdated2;
+    private javax.swing.JButton btnGo;
+    private javax.swing.JButton btnReset;
     private javax.swing.JComboBox<String> cmbAvailability;
     private javax.swing.JComboBox<String> cmbLocation;
+    private javax.swing.JComboBox<String> cmbMaintenanceCertificate;
     private javax.swing.JComboBox<String> cmbModelName;
     private javax.swing.JComboBox<String> cmbNameOfCar;
     private javax.swing.JComboBox<String> cmbNoOfSeats;
+    private javax.swing.JComboBox<String> cmbSerialNumber;
     private javax.swing.JComboBox<String> cmbYearOfManufacture;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane searchJPanel;
-    private javax.swing.JTable tblSearchCars;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblFilterCars;
+    private javax.swing.JTable tblMinMax;
     private javax.swing.JLabel ttlAddCar;
+    private javax.swing.JTextField txtMaxSeats;
+    private javax.swing.JTextField txtMinSeats;
     // End of variables declaration//GEN-END:variables
 
 
-     private void populateSearchCars() {
-         
-         String name = cmbNameOfCar.getSelectedItem().toString();
-         String modelname = cmbModelName.getSelectedItem().toString();
-         int year = Integer.parseInt(cmbYearOfManufacture.getSelectedItem().toString());
-         int seats = Integer.parseInt(cmbNoOfSeats.getSelectedItem().toString());
+private void populateSearchCars() {
 
-        DefaultTableModel model = (DefaultTableModel) tblSearchCars.getModel();
-       model.setRowCount(0);
-         
-        int noOfCarsFiltered = 0;
-        int noOfLoops = 1;
- 
-        for (Car car : allCars.getAllCars())
-            if(
-                    (  (car.getNameOfCar().equalsIgnoreCase( name)) || ( name.equals("select"))   ) && 
-                    (  (car.getModelName().equalsIgnoreCase(modelname) ) || modelname.equals("select")) &&
-                    (  (car.getYearOfManufacture() == year) || (cmbYearOfManufacture.getSelectedItem().toString().equals("0") )) &&
-                    (  (car.getNoOfSeats() ==  seats) || (cmbNoOfSeats.getSelectedItem().toString().equals("0")) ) 
-                    
-               )
-            
-            {
-                Object[] row = new Object[6];
-                row[0] = car ;
-                row[1] = car.getModelName();
-                row[2] = car.getYearOfManufacture();
-                row[3] = car.getSerialNumber();
-                row[4] = car.getNoOfSeats();
-                row[5] = car.getSerialNumber();
-               // model.addRow(row);
-               model.insertRow(noOfCarsFiltered, row);
-                System.out.println(car.getSerialNumber());
-                noOfCarsFiltered++ ;
-                //JOptionPane.showMessageDialog(this, "No of Cars Filtered : " + String.valueOf(noOfCarsFiltered));
-                
-            }
-            
-            else if ((noOfCarsFiltered == 0) && (noOfLoops == allCars.getAllCars().size())){
-                JOptionPane.showMessageDialog(this, "Sorry, we dont have any cars matching your requirement at this time!!!!");
-                
-            }
-            noOfLoops++ ;
-            
-          
-        } 
-        
+    String name = cmbNameOfCar.getSelectedItem().toString();
+    String modelname = cmbModelName.getSelectedItem().toString();
+    int year = Integer.parseInt(cmbYearOfManufacture.getSelectedItem().toString());
+    int seats = Integer.parseInt(cmbNoOfSeats.getSelectedItem().toString());
+    String location = cmbLocation.getSelectedItem().toString();
+    String availability = cmbAvailability.getSelectedItem().toString();
+    String maintCert = cmbMaintenanceCertificate.getSelectedItem().toString();
+    String serialNum = cmbSerialNumber.getSelectedItem().toString();
+    
+    //creating a table model and reseting it
+    DefaultTableModel model = (DefaultTableModel) tblFilterCars.getModel();
+    model.setRowCount(0);
+
+   int noOfCarsFiltered = 0;
+   int noOfLoops = 1;
+
+   for (Car car : allCars.getAllCars()){
+       if(
+               (  (car.getNameOfCar().equalsIgnoreCase(name)) || ( name.equals("select"))   ) && 
+               (  (car.getModelName().equalsIgnoreCase(modelname) ) || modelname.equals("select")) &&
+               (  (car.getYearOfManufacture() == year) || (cmbYearOfManufacture.getSelectedItem().toString().equals("0") )) &&
+               (  (car.getNoOfSeats() ==  seats) || (cmbNoOfSeats.getSelectedItem().toString().equals("0")) )  &&
+                (  (car.getLocation().equalsIgnoreCase(location)) || ( location.equals("select"))   ) && 
+                (  (car.getAvailability().equalsIgnoreCase(availability)) || ( availability.equals("select"))   ) && 
+                (  (car.getMaintenaceCertificate().equalsIgnoreCase(maintCert)) || ( maintCert.equals("select")) ) &&
+               (  (car.getSerialNumber().equalsIgnoreCase(serialNum)) || ( serialNum.equals("select")) )
+             
+
+          )
+
+       {
+           Object[] item = new Object[8];
+           item[0] = car ;
+           item[1] = car.getModelName();
+           item[2] = car.getYearOfManufacture();
+           item[3] = car.getSerialNumber();
+           item[4] = car.getNoOfSeats();
+           item[3] = car.getSerialNumber();
+           item[5] = car.getLocation();
+           item[6] = car.getAvailability();
+           item[7] = car.getMaintenaceCertificate();
+           model.addRow(item);
+           noOfCarsFiltered++ ;
+       }
+
+       else if ((noOfCarsFiltered == 0) && (noOfLoops == allCars.getAllCars().size())){
+           JOptionPane.showMessageDialog(this, "Sorry, we dont have any cars matching your requirement at this time!!!!");
+
+       }
+      
+       noOfLoops++ ;
+   } 
+    System.out.print("no. of cars : " + allCars.getAllCars().size());
+}
+
         
    
-    
-    private void populateCombo() {
-        cmbNameOfCar.removeAllItems(); 
-        cmbModelName.removeAllItems();
-        cmbYearOfManufacture.removeAllItems();
-        cmbNoOfSeats.removeAllItems();
+private void populateSerialNumber(){
+
+        cmbSerialNumber.removeAllItems();
+        cmbSerialNumber.addItem("select");
+          
+        for (Car car : allCars.getAllCars()){
+        cmbSerialNumber.addItem(car.getSerialNumber());
+        }
+          
+
+   }
+
+    private void resetSearch() {
+        DefaultTableModel model = (DefaultTableModel) tblFilterCars.getModel();
+        model.setRowCount(0);
+        }
+
+    private void populateMinMax() {
         
-        cmbNameOfCar.addItem("select"); 
-        cmbModelName.addItem("select");
-        cmbYearOfManufacture.addItem("0");
-        cmbNoOfSeats.addItem("0");
         
-        for ( Car car : allCars.getAllCars()){
-            cmbNameOfCar.addItem(car.getNameOfCar());
-        }
-        for ( Car car : allCars.getAllCars()){
-            cmbModelName.addItem(car.getModelName());
-        }
-        for ( Car car : allCars.getAllCars()){
-            cmbYearOfManufacture.addItem(String.valueOf(car.getYearOfManufacture()));
-        }
-        for ( Car car : allCars.getAllCars()){
-            cmbNoOfSeats.addItem(String.valueOf(car.getNoOfSeats()));
-        }  
-            
         
     }
-}
+  
+    }
+
+
