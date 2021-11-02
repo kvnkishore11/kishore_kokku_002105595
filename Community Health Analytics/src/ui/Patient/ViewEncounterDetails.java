@@ -54,17 +54,8 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtRr = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        txtTemperature = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        txtComplaint_3 = new javax.swing.JTextField();
-        txtDiagnosis = new javax.swing.JTextField();
-        txtComplaint_1 = new javax.swing.JTextField();
-        txtComplaint_2 = new javax.swing.JTextField();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,7 +64,7 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
 
         lblDate1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDate1.setForeground(new java.awt.Color(204, 255, 255));
-        lblDate1.setText("Date ");
+        lblDate1.setText("Encounter Date");
 
         lblPatientName1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPatientName1.setForeground(new java.awt.Color(204, 255, 255));
@@ -88,7 +79,7 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(175, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDate1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblPatientName1, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -96,12 +87,12 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(154, 154, 154))
+                .addGap(162, 162, 162))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPatientName1)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -109,10 +100,10 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 590, 100));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 590, 100));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -137,12 +128,14 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1000, 60));
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(0, 204, 204));
         jPanel5.setPreferredSize(new java.awt.Dimension(179, 22));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Vital Signs");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -150,179 +143,46 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(221, 221, 221)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
-                .addComponent(jLabel10))
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 48));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Blood Pressure");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         txtBp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jPanel3.add(txtBp, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 134, -1));
 
         txtHr.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jPanel3.add(txtHr, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 134, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel12.setText("Heart Rate");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setText("Respiratory Rate");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
 
         txtRr.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jPanel3.add(txtRr, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 134, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel11)
-                            .addGap(31, 31, 31)
-                            .addComponent(txtBp))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel12)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                            .addComponent(txtRr, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtHr, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtBp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtRr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtHr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 290, 290));
-
-        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+        txtTemperature.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jPanel3.add(txtTemperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 134, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel14.setText("Report");
+        jLabel14.setText("Temperature");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel15.setText("Problem 1");
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel16.setText("Problem 2");
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel17.setText("Problem 3");
-
-        txtComplaint_3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-
-        txtDiagnosis.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtDiagnosis.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-
-        txtComplaint_1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-
-        txtComplaint_2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        txtComplaint_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtComplaint_2ActionPerformed(evt);
-            }
-        });
-
-        jPanel7.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel7.setPreferredSize(new java.awt.Dimension(199, 21));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel18.setText("Diagnosis");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(jLabel18)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel18)
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel14)))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtComplaint_2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtComplaint_3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtComplaint_1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtComplaint_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(txtComplaint_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(txtComplaint_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 300, 290));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 590, 290));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -340,10 +200,6 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtComplaint_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComplaint_2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtComplaint_2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;
@@ -351,29 +207,20 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel lblDate1;
     private javax.swing.JLabel lblPatientName1;
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JTextField txtBp;
-    private javax.swing.JTextField txtComplaint_1;
-    private javax.swing.JTextField txtComplaint_2;
-    private javax.swing.JTextField txtComplaint_3;
     private javax.swing.JTextField txtDate;
-    private javax.swing.JTextField txtDiagnosis;
     private javax.swing.JTextField txtHr;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtRr;
+    private javax.swing.JTextField txtTemperature;
     // End of variables declaration//GEN-END:variables
 
     private void populateEncounterDetails() {
@@ -394,24 +241,25 @@ public class ViewEncounterDetails extends javax.swing.JPanel {
         
         
            
-        txtDiagnosis.setText(encounter.getDiagnosis());
-        
-        String[] complaints = encounter.getCompaints();
-        if(!complaints[0].trim().equalsIgnoreCase("")){
-            txtComplaint_1.setText(complaints[0]);
-        }
-        if(!complaints[1].trim().equalsIgnoreCase("")){
-            txtComplaint_2.setText(complaints[1]);
-        }
-        if(!complaints[2].trim().equalsIgnoreCase("")){
-            txtComplaint_3.setText(complaints[2]);
-        }
-        
+//        txtDiagnosis.setText(encounter.getDiagnosis());
+//        
+//        String[] complaints = encounter.getCompaints();
+//        if(!complaints[0].trim().equalsIgnoreCase("")){
+//            txtComplaint_1.setText(complaints[0]);
+//        }
+//        if(!complaints[1].trim().equalsIgnoreCase("")){
+//            txtComplaint_2.setText(complaints[1]);
+//        }
+//        if(!complaints[2].trim().equalsIgnoreCase("")){
+//            txtComplaint_3.setText(complaints[2]);
+//        }
+//        
        
       
         txtBp.setText(String.valueOf(encounter.getVitalSign().getBloodPressure()));
         txtHr.setText(String.valueOf(encounter.getVitalSign().getHeartRate()));
         txtRr.setText(String.valueOf(encounter.getVitalSign().getRespiratoryRate()));
+        txtTemperature.setText(String.valueOf(encounter.getVitalSign().getTemperature()));
         
      
       

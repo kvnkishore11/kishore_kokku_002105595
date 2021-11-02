@@ -27,8 +27,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
     /**
      * Creates new form PatientViewReport
      */
-    public DoctorViewReport(JPanel workArea, PatientDirectory patientDirectory
-    ) {
+    public DoctorViewReport(JPanel workArea, PatientDirectory patientDirectory) {
         initComponents();
         this.workArea = workArea;
         this.patientDirectory = patientDirectory;
@@ -45,7 +44,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
         for(Encounter e : encounterHistory.getEncounterHistory()){
             Object row[] = new Object[4];
             row[0] = e;  
-            row[1] = e.getAge(); 
+            row[1] = e.getPatient().getAge(); 
             row[2] = e.getVitalSign().getBloodPressure();
             row[3] = e.getCurrentHealthStatus();    
             model.addRow(row);

@@ -13,14 +13,15 @@ public class Encounter {
     
     private Patient patient;
     private Date encounterDate;
-    private String[] compaints; // make default array size as 3
-    private String diagnosis;
+//    private String[] compaints; // make default array size as 3
+//    private String diagnosis;
     private VitalSign vitalSign;
     private String currentHealthStatus; 
-    private int age;
+//    private int age;
     
     public Encounter() {
-        this.compaints = new String[3];
+//        this.compaints = new String[3];
+//        this.patient = new Patient();
 //        this.vitalSign = new VitalSign();
     }
     
@@ -40,21 +41,21 @@ public class Encounter {
         this.encounterDate = encounterDate;
     }
 
-    public String[] getCompaints() {
-        return compaints;
-    }
-
-    public void setCompaints(String[] compaints) {
-        this.compaints = compaints;
-    }
-
-    public String getDiagnosis() {
-        return diagnosis;
-    }
-
-    public void setDiagnosis(String diagnosis) {
-        this.diagnosis = diagnosis;
-    }
+//    public String[] getCompaints() {
+//        return compaints;
+//    }
+//
+//    public void setCompaints(String[] compaints) {
+//        this.compaints = compaints;
+//    }
+//
+//    public String getDiagnosis() {
+//        return diagnosis;
+//    }
+//
+//    public void setDiagnosis(String diagnosis) {
+//        this.diagnosis = diagnosis;
+//    }
 
     public VitalSign getVitalSign() {
         return vitalSign;
@@ -72,13 +73,13 @@ public class Encounter {
         this.currentHealthStatus = currentHealthStatus;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+//    public int getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(int age) {
+//        this.age = age;
+//    }
 
   
     
@@ -86,7 +87,7 @@ public class Encounter {
 
 //        calculateAgeAtEncounter();
         
-        if(isBloodPressureNormal(this.getAge(), this.vitalSign.getBloodPressure())){
+        if(isBloodPressureNormal(this.patient.getAge(), this.vitalSign.getBloodPressure())){
             this.setCurrentHealthStatus("Normal");
         }else{
             this.setCurrentHealthStatus("Abnormal");

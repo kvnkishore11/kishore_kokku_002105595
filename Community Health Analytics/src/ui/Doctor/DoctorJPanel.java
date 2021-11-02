@@ -1,8 +1,3 @@
-/*
- * AdminWorkAreaJPanel.java
- *
- * Created on October 10, 2008, 8:50 AM
- */
 
 package ui.Doctor;
 
@@ -128,7 +123,7 @@ public class DoctorJPanel extends javax.swing.JPanel {
 
     private void btnRecordEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordEncounterActionPerformed
         
-        RecordNewEncounter recordNewEncounter = new RecordNewEncounter(workArea, healthcareSystem);
+        AddNewEncounter recordNewEncounter = new AddNewEncounter(workArea, healthcareSystem);
         workArea.add("RecordNewEncounter", recordNewEncounter);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);

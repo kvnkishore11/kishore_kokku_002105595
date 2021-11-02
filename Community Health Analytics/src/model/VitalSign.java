@@ -14,11 +14,13 @@ public class VitalSign {
     private int respiratoryRate;
     private int bloodPressure;
     private int heartRate;
+    private double temperature;
 
-    public VitalSign(int respiratoryRate, int bloodPressure, int heartRate) {
+    public VitalSign(int respiratoryRate, int bloodPressure, int heartRate, double temperature) {
         this.respiratoryRate = respiratoryRate;
         this.bloodPressure = bloodPressure;
         this.heartRate = heartRate;
+        this.temperature = temperature;
     }
     
     
@@ -45,6 +47,16 @@ public class VitalSign {
     public void setHeartRate(int heartRate) {
         this.heartRate = heartRate;
     }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+    
+    
     
     
 }
