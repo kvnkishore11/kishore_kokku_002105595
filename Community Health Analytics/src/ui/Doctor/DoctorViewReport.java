@@ -43,10 +43,11 @@ public class DoctorViewReport extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(Encounter e : encounterHistory.getEncounterHistory()){
-            Object row[] = new Object[3];
-            row[0] = e;   
-            row[1] = e.getVitalSign().getBloodPressure();
-            row[2] = e.getCurrentHealthStatus();    
+            Object row[] = new Object[4];
+            row[0] = e;  
+            row[1] = e.getAge(); 
+            row[2] = e.getVitalSign().getBloodPressure();
+            row[3] = e.getCurrentHealthStatus();    
             model.addRow(row);
         }
         
@@ -60,6 +61,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEncounterDetails = new javax.swing.JTable();
@@ -68,6 +70,8 @@ public class DoctorViewReport extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         lblTitle1 = new javax.swing.JLabel();
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/agevsBPlevels.png"))); // NOI18N
+
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -75,24 +79,24 @@ public class DoctorViewReport extends javax.swing.JPanel {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_physical_therapy_25px.png"))); // NOI18N
         lblTitle.setText("Select Patient");
-        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 150, 120, 30));
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 120, 30));
 
         jScrollPane1.setForeground(new java.awt.Color(51, 51, 255));
 
         tblEncounterDetails.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         tblEncounterDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Encounter Date", "Blood pressure", "Results"
+                "Encounter Date", "Age at Encounter", "Blood pressure", "Results"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -101,7 +105,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEncounterDetails);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 708, 188));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 708, 188));
 
         btnViewMoreDetails.setBackground(new java.awt.Color(204, 204, 255));
         btnViewMoreDetails.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -112,7 +116,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
                 btnViewMoreDetailsActionPerformed(evt);
             }
         });
-        add(btnViewMoreDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, -1, -1));
+        add(btnViewMoreDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, -1, -1));
 
         cmbPatients.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbPatients.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -121,7 +125,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
                 cmbPatientsActionPerformed(evt);
             }
         });
-        add(cmbPatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 169, -1));
+        add(cmbPatients, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 169, -1));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -136,7 +140,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(380, 380, 380)
                 .addComponent(lblTitle1)
-                .addContainerGap(442, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +177,7 @@ public class DoctorViewReport extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewMoreDetails;
     private javax.swing.JComboBox<Object> cmbPatients;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;

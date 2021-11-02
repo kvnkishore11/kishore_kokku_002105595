@@ -16,7 +16,7 @@ public class Person {
     String name;
     long phone;
     String email;
-    Date dateOfBirth;
+    int age;
     House house;
     
     public String getName() {
@@ -43,13 +43,15 @@ public class Person {
         this.email = email;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public int getAge() {
+        return age;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setAge(int age) {
+        this.age = age;
     }
+
+    
 
     public House getHouse() {
         return house;
@@ -59,12 +61,12 @@ public class Person {
         this.house = house;
     }
 
-    public Person(String name, long phone, String email, Date dateOfBirth,
+    public Person(String name, long phone, String email, int age,
             String houseNumber, String streetName, String communityName, int zipCode) {
         this.name = name;
         this.phone = phone;
         this.email = email;
-        this.dateOfBirth = dateOfBirth;
+        this.age = age;
         this.house = new House(houseNumber, streetName, communityName, zipCode);
     }
 

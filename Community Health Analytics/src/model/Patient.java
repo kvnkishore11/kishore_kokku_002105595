@@ -18,11 +18,11 @@ public class Patient extends Person{
     
     String healthStatus; 
     
-    private static int patientCounter = 0;
+    //private static int patientCounter = 0;
 
-    public Patient(String name, long phone, String email, Date dateOfBirth, String houseNumber, String streetName, String communityName, int zipCode) {
-        super(name, phone, email, dateOfBirth, houseNumber, streetName, communityName, zipCode);
-        this.patientId = patientCounter++;
+    public Patient(int patientId, String name, long phone, String email, int age, String houseNumber, String streetName, String communityName, int zipCode) {
+        super(name, phone, email, age, houseNumber, streetName, communityName, zipCode);
+        //this.patientId = patientId;
         this.encounterHistory = new EncounterHistory();
         this.healthStatus = "Normal";
     }

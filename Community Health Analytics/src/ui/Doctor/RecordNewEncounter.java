@@ -8,8 +8,14 @@ package ui.Doctor;
 import model.Encounter;
 import model.HealthcareSystem;
 import model.Patient;
+import model.PatientDirectory;
 import model.VitalSign;
 import java.awt.CardLayout;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -47,6 +53,7 @@ public class RecordNewEncounter extends javax.swing.JPanel {
         lblPatientName = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         patientComboBox = new javax.swing.JComboBox<>();
+        lblSampleAge = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblTitle1 = new javax.swing.JLabel();
@@ -70,6 +77,7 @@ public class RecordNewEncounter extends javax.swing.JPanel {
         txtComplaint_2 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,8 +92,16 @@ public class RecordNewEncounter extends javax.swing.JPanel {
         lblPatientName.setForeground(new java.awt.Color(204, 255, 255));
         lblPatientName.setText("Patient Name");
 
+        jDateChooser1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jDateChooser1KeyReleased(evt);
+            }
+        });
+
         patientComboBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         patientComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblSampleAge.setBackground(new java.awt.Color(255, 204, 153));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -100,7 +116,9 @@ public class RecordNewEncounter extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(patientComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                .addGap(172, 172, 172))
+                .addGap(90, 90, 90)
+                .addComponent(lblSampleAge, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +131,11 @@ public class RecordNewEncounter extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblDate, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSampleAge, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 590, 100));
@@ -339,6 +361,14 @@ public class RecordNewEncounter extends javax.swing.JPanel {
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 300, 290));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 570, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -348,7 +378,7 @@ public class RecordNewEncounter extends javax.swing.JPanel {
         List<Encounter> encounterHistory = selectedPatient.getEncounterHistory().getEncounterHistory();
         Encounter newEncounter = new Encounter(); 
         String[] complaints = new String[3];
-        
+
         if(selectedPatient != null){
             newEncounter.setPatient(selectedPatient);
             newEncounter.setEncounterDate(jDateChooser1.getDate());
@@ -376,9 +406,16 @@ public class RecordNewEncounter extends javax.swing.JPanel {
                 return;
             } 
             
-          
+            
+           try{
             newEncounter.setVitalSign(new VitalSign(Integer.parseInt(txtRr.getText()),Integer.parseInt(txtBp.getText()),
                Integer.parseInt(txtHr.getText())));
+           }catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(this, "Fill in All the fields along with valid data format", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+
+           }
+           
                 
             newEncounter.setHealthStatus();
             encounterHistory.add(newEncounter);            
@@ -402,6 +439,67 @@ public class RecordNewEncounter extends javax.swing.JPanel {
     private void txtComplaint_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComplaint_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtComplaint_2ActionPerformed
+
+    private void jDateChooser1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jDateChooser1KeyReleased
+        // TODO add your handling code here:
+//         Patient selectedPatient = (Patient) patientComboBox.getSelectedItem();
+//        List<Encounter> encounterHistory = selectedPatient.getEncounterHistory().getEncounterHistory();
+//        Encounter newEncounter = new Encounter(); 
+//        lblSampleAge.setText(Integer.toString(newEncounter.getAge()));
+    }//GEN-LAST:event_jDateChooser1KeyReleased
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String path = "C:\\Users\\LENOVO\\Desktop\\patients.csv";
+        String line = "";
+
+       try{
+        BufferedReader br;
+        br = new BufferedReader(new FileReader(path));
+        
+        int i = 0;
+        int patientId=0;
+        String name = ""; long phone= 0;
+        String email=""; int age = 0;
+        String houseNumber = "";
+        String streetName = "";
+        String communityName = "";
+        int zipCode = 0;
+          
+        while((line=br.readLine()) != null){
+            String[] values = line.split(",");
+            Patient p = new Patient(patientId, name,phone, email, age,houseNumber, streetName,communityName,zipCode);
+               
+            p.setPatientId(Integer.parseInt(values[0]));
+            p.setName(values[1]);
+            p.setAge(Integer.parseInt(values[2]));
+            p.setPhone(Long.parseLong(values[3]));
+            p.setEmail(values[4]);
+            //p.setHouseNumber(Integer.parseInt(values[5]));
+
+            patientDirectory.addPatient(p);
+            i++;
+                 
+                
+            }
+            
+        JOptionPane.showMessageDialog(this, String.valueOf(i) + " Encounters have been added to Encounter History");
+        refreshTable();
+          
+       } 
+   
+        catch ( FileNotFoundException e){
+            JOptionPane.showMessageDialog(this, "The error message has been caught");
+         } 
+         catch (IOException ex)
+         {
+             
+         }
+
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     private void backAction() {
         workArea.remove(this);
@@ -412,6 +510,7 @@ public class RecordNewEncounter extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -430,6 +529,7 @@ public class RecordNewEncounter extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblPatientName;
+    private javax.swing.JLabel lblSampleAge;
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JComboBox<Object> patientComboBox;
     private javax.swing.JTextField txtBp;

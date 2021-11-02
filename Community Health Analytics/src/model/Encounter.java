@@ -17,7 +17,7 @@ public class Encounter {
     private String diagnosis;
     private VitalSign vitalSign;
     private String currentHealthStatus; 
-    private int ageAtEncounter;
+    private int age;
     
     public Encounter() {
         this.compaints = new String[3];
@@ -72,19 +72,21 @@ public class Encounter {
         this.currentHealthStatus = currentHealthStatus;
     }
 
-    public int getAgeAtEncounter() {
-        return ageAtEncounter;
+    public int getAge() {
+        return age;
     }
 
-    public void setAgeAtEncounter(int ageAtEncounter) {
-        this.ageAtEncounter = ageAtEncounter;
+    public void setAge(int age) {
+        this.age = age;
     }
+
+  
     
     public void setHealthStatus(){
 
-        calculateAgeAtEncounter();
+//        calculateAgeAtEncounter();
         
-        if(isBloodPressureNormal(this.getAgeAtEncounter(), this.vitalSign.getBloodPressure())){
+        if(isBloodPressureNormal(this.getAge(), this.vitalSign.getBloodPressure())){
             this.setCurrentHealthStatus("Normal");
         }else{
             this.setCurrentHealthStatus("Abnormal");
@@ -92,7 +94,7 @@ public class Encounter {
         
     }
 
-    public Boolean isBloodPressureNormal(long age, int bloodPressure){
+    public Boolean isBloodPressureNormal(int age, int bloodPressure){
         if (age == 0) {
             if (bloodPressure >= 50 && bloodPressure <= 70) {
                 return true;
@@ -126,14 +128,14 @@ public class Encounter {
         }
     }
     
-    public void calculateAgeAtEncounter(){
-        Date firstDate = this.patient.getDateOfBirth();
-        Date secondDate = encounterDate;
-        
-        long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-        long ageInYrs = TimeUnit.MILLISECONDS.toDays(diffInMillies)/ 365l;
-        setAgeAtEncounter((int) ageInYrs);
-    }
+//    public void calculateAgeAtEncounter(){
+//        Date firstDate = this.patient.getDateOfBirth();
+//        Date secondDate = encounterDate;
+//        
+//        long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
+//        long ageInYrs = TimeUnit.MILLISECONDS.toDays(diffInMillies)/ 365l;
+//        setAgeAtEncounter((int) ageInYrs);
+//    }
     
     @Override
     public String toString(){

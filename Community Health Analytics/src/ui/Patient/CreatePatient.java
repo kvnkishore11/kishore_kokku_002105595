@@ -14,6 +14,10 @@ import model.PatientDirectory;
 import ui.Admin.ManagePatients;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,20 +75,22 @@ public class CreatePatient extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pnlBasicInfo = new javax.swing.JPanel();
-        lblProductName1 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        lblPatientId = new javax.swing.JLabel();
+        txtPatientId = new javax.swing.JTextField();
         lblDateOfBirth = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblPhone = new javax.swing.JLabel();
-        txtPhone = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        lblProductName2 = new javax.swing.JLabel();
+        txtName1 = new javax.swing.JTextField();
+        txtPhone1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         lblHouseNo1 = new javax.swing.JLabel();
-        lblHouseNo2 = new javax.swing.JLabel();
+        lblHouseNo3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -166,36 +172,32 @@ public class CreatePatient extends javax.swing.JPanel {
         pnlBasicInfo.setBackground(new java.awt.Color(153, 255, 204));
         pnlBasicInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblProductName1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProductName1.setText(" Name");
-        pnlBasicInfo.add(lblProductName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, 30));
+        lblPatientId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPatientId.setText("Paitent Id");
+        pnlBasicInfo.add(lblPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, 20));
 
-        txtName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 182, -1));
+        txtPatientId.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 170, -1));
 
         lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDateOfBirth.setText("Date of Birth");
-        pnlBasicInfo.add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, 30));
-
-        jDateChooser1.setDateFormatString("MM, dd, yyyy");
-        jDateChooser1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 179, 30));
+        lblDateOfBirth.setText("Age");
+        pnlBasicInfo.add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 30));
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblEmail.setText("Email");
-        pnlBasicInfo.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        pnlBasicInfo.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 182, -1));
+        pnlBasicInfo.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 182, -1));
 
         lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPhone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhone.setText("Mobile");
         lblPhone.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pnlBasicInfo.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        pnlBasicInfo.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
 
-        txtPhone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 182, -1));
+        txtAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 182, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -207,18 +209,28 @@ public class CreatePatient extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(272, Short.MAX_VALUE)
+                .addContainerGap(265, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
+                .addGap(185, 185, 185))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 4, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pnlBasicInfo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 650, 20));
+
+        lblProductName2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProductName2.setText(" Name");
+        pnlBasicInfo.add(lblProductName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 30));
+
+        txtName1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 182, -1));
+
+        txtPhone1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 182, -1));
 
         add(pnlBasicInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 650, 190));
 
@@ -252,25 +264,28 @@ public class CreatePatient extends javax.swing.JPanel {
         lblHouseNo1.setText("Back");
         add(lblHouseNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 40, 20));
 
-        lblHouseNo2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblHouseNo2.setForeground(new java.awt.Color(0, 51, 255));
-        lblHouseNo2.setText("Add Patient");
-        add(lblHouseNo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, -1, -1));
+        lblHouseNo3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHouseNo3.setForeground(new java.awt.Color(0, 51, 255));
+        lblHouseNo3.setText("Add Patient");
+        add(lblHouseNo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         
         Patient patient = null;
+        int patientId = 0;
         String patientName = null;
         long phone = 0;
         String email = null;
-        Date dateOfBirth = null;
+        
         String houseNo = null;
         String streetName = null;
         int zip = 0;
         String communityName = null;
+        int age = 0;
         
-        patientName = txtName.getText();
-        dateOfBirth = jDateChooser1.getDate();
+        
+        patientName = txtPatientId.getText();
+       
         email = txtEmail.getText();
         houseNo = txtHouseNo.getText();
         streetName = txtStreetName.getText();
@@ -280,7 +295,9 @@ public class CreatePatient extends javax.swing.JPanel {
         
        //validation
         try{
-            phone = Long.parseLong(txtPhone.getText());
+            age= Integer.parseInt(txtAge.getText());
+            patientId = Integer.parseInt(txtPatientId.getText());
+            phone = Long.parseLong(txtAge.getText());
             zip = Integer.parseInt(txtZip.getText());
         }catch(NumberFormatException ne){
             JOptionPane.showMessageDialog(this, "Please enter Phone Number/Zip Code in valid format");
@@ -292,7 +309,7 @@ public class CreatePatient extends javax.swing.JPanel {
             return;
         }
         
-        patient = new Patient(patientName, phone, email, dateOfBirth, houseNo, streetName, communityName, zip);
+        patient = new Patient(patientId, patientName, phone, email, age, houseNo, streetName, communityName, zip);
         
         //add this house to selected comunity also
         patientDirectory.addPatient(patient);
@@ -318,7 +335,6 @@ public class CreatePatient extends javax.swing.JPanel {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JComboBox<Object> cmbCommunity;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -329,18 +345,21 @@ public class CreatePatient extends javax.swing.JPanel {
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblHouseNo;
     private javax.swing.JLabel lblHouseNo1;
-    private javax.swing.JLabel lblHouseNo2;
+    private javax.swing.JLabel lblHouseNo3;
+    private javax.swing.JLabel lblPatientId;
     private javax.swing.JLabel lblPhone;
-    private javax.swing.JLabel lblProductName1;
+    private javax.swing.JLabel lblProductName2;
     private javax.swing.JLabel lblStreetName;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblZip;
     private javax.swing.JPanel pnlAddressInfo;
     private javax.swing.JPanel pnlBasicInfo;
+    private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHouseNo;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtPatientId;
+    private javax.swing.JTextField txtPhone1;
     private javax.swing.JTextField txtStreetName;
     private javax.swing.JTextField txtZip;
     // End of variables declaration//GEN-END:variables

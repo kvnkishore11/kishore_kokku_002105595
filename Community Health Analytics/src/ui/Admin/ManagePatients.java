@@ -1,6 +1,7 @@
 
 package ui.Admin;
 
+
 import model.Community;
 import model.HealthcareSystem;
 import model.House;
@@ -9,6 +10,11 @@ import model.PatientDirectory;
 import ui.Patient.CreatePatient;
 import ui.Patient.ViewPatientProfile;
 import java.awt.CardLayout;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -42,9 +48,12 @@ public class ManagePatients extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(Patient p : patientDirectory.getPatientDirectory()) {
-            Object row[] = new Object[2];
+            Object row[] = new Object[5];
             row[0] = p;
-            row[1] = p.getEncounterHistory().size() == 0 ? "None" 
+            row[1] = p.getPatientId();
+            row[2] = p.getAge();
+            row[3] = p.getPhone();
+            row[4] = p.getEncounterHistory().size() == 0 ? "None" 
                     : p.getEncounterHistory().getEncounterHistory().get(p.getEncounterHistory().size() - 1).getEncounterDate();
             model.addRow(row);
         }
@@ -63,6 +72,7 @@ public class ManagePatients extends javax.swing.JPanel {
         btnAdd = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         lblTitle1 = new javax.swing.JLabel();
+        btnAddCSV = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 204, 255));
         setPreferredSize(new java.awt.Dimension(1000, 900));
@@ -73,17 +83,17 @@ public class ManagePatients extends javax.swing.JPanel {
         tblPatients.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Last encounter date"
+                "Patient Name", "Patient Id", "Age", "Phone", "Last encounter date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -92,7 +102,7 @@ public class ManagePatients extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPatients);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 578, 188));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 660, 450));
 
         btnRemove.setBackground(new java.awt.Color(255, 51, 51));
         btnRemove.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -103,7 +113,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnRemoveActionPerformed(evt);
             }
         });
-        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, 40));
+        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 390, 150, 40));
 
         btnView.setBackground(new java.awt.Color(255, 204, 204));
         btnView.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -114,7 +124,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnViewActionPerformed(evt);
             }
         });
-        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 160, 40));
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 160, 40));
 
         btnAdd.setBackground(new java.awt.Color(102, 102, 255));
         btnAdd.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -126,7 +136,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 150, 40));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 150, 40));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -138,10 +148,10 @@ public class ManagePatients extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(366, 366, 366)
                 .addComponent(lblTitle1)
-                .addGap(431, 431, 431))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,6 +159,14 @@ public class ManagePatients extends javax.swing.JPanel {
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1000, 60));
+
+        btnAddCSV.setText("Add CSV");
+        btnAddCSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCSVActionPerformed(evt);
+            }
+        });
+        add(btnAddCSV, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -207,9 +225,67 @@ public class ManagePatients extends javax.swing.JPanel {
         refreshTable();
     }//GEN-LAST:event_btnRemoveActionPerformed
 
+    private void btnAddCSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCSVActionPerformed
+        // TODO add your handling code here:
+
+
+        String path = "C:\\Users\\LENOVO\\Desktop\\patients.csv";
+        String line = "";
+
+       try{
+        BufferedReader br;
+        br = new BufferedReader(new FileReader(path));
+        
+        int i = 0;
+        int patientId=0;
+        String name = ""; long phone= 0;
+        String email=""; int age = 0;
+        String houseNumber = "";
+        String streetName = "";
+        String communityName = "";
+        int zipCode = 0;
+        ArrayList<Integer> arrlist = new ArrayList<Integer>();
+          
+        while((line=br.readLine()) != null){
+            String[] values = line.split(",");
+            Patient p = new Patient(patientId, name,phone, email, age,houseNumber, streetName,communityName,zipCode);
+               
+            if (! arrlist.contains(Integer.parseInt(values[0]))){
+                p.setPatientId(Integer.parseInt(values[0]));
+                p.setName(values[1]);
+                p.setAge(Integer.parseInt(values[2]));
+                p.setPhone(Long.parseLong(values[3]));
+                p.setEmail(values[4]);
+              //  p.setHouseNumber(Integer.parseInt(values[5]));
+                
+                patientDirectory.addPatient(p);
+                i++;
+                arrlist.add(Integer.parseInt(values[0]));
+                 }
+                
+            }
+            
+        JOptionPane.showMessageDialog(this, String.valueOf(i) + " Patients are added into Patient Directory");
+        refreshTable();
+          
+       } 
+   
+        catch ( FileNotFoundException e){
+            JOptionPane.showMessageDialog(this, "The error message has been caught");
+         } 
+         catch (IOException ex)
+         {
+             
+         }
+
+        
+
+    }//GEN-LAST:event_btnAddCSVActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAddCSV;
     private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel jPanel1;

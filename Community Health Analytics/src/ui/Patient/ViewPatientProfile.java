@@ -54,8 +54,6 @@ public class ViewPatientProfile extends javax.swing.JPanel {
         txtHouseNo1 = new javax.swing.JTextField();
         pnlBasicInfo = new javax.swing.JPanel();
         lblProductName1 = new javax.swing.JLabel();
-        txtDOB = new javax.swing.JTextField();
-        lblDateOfBirth = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblPhone = new javax.swing.JLabel();
@@ -63,6 +61,10 @@ public class ViewPatientProfile extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        txtPatientId = new javax.swing.JTextField();
+        lblPatientId = new javax.swing.JLabel();
+        lblDateOfBirth = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
         lblHouseNo1 = new javax.swing.JLabel();
@@ -138,30 +140,23 @@ public class ViewPatientProfile extends javax.swing.JPanel {
 
         lblProductName1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblProductName1.setText(" Name");
-        pnlBasicInfo.add(lblProductName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, 30));
-
-        txtDOB.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 182, -1));
-
-        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDateOfBirth.setText("Date of Birth");
-        pnlBasicInfo.add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, 30));
+        pnlBasicInfo.add(lblProductName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 30));
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblEmail.setText("Email");
-        pnlBasicInfo.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        pnlBasicInfo.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         txtEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 182, -1));
+        pnlBasicInfo.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 182, -1));
 
         lblPhone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPhone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhone.setText("Mobile");
         lblPhone.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pnlBasicInfo.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        pnlBasicInfo.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
 
         txtPhone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 182, -1));
+        pnlBasicInfo.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 182, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -185,7 +180,21 @@ public class ViewPatientProfile extends javax.swing.JPanel {
         pnlBasicInfo.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
 
         txtName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 182, -1));
+        pnlBasicInfo.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 182, -1));
+
+        txtPatientId.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 182, -1));
+
+        lblPatientId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPatientId.setText("Paitent Id");
+        pnlBasicInfo.add(lblPatientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
+
+        lblDateOfBirth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDateOfBirth.setText("Age");
+        pnlBasicInfo.add(lblDateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, 30));
+
+        txtAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 182, -1));
 
         jPanel1.add(pnlBasicInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 650, 190));
 
@@ -260,6 +269,7 @@ public class ViewPatientProfile extends javax.swing.JPanel {
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblHouseNo;
     private javax.swing.JLabel lblHouseNo1;
+    private javax.swing.JLabel lblPatientId;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblProductName1;
     private javax.swing.JLabel lblStreetName;
@@ -267,11 +277,12 @@ public class ViewPatientProfile extends javax.swing.JPanel {
     private javax.swing.JLabel lblZip;
     private javax.swing.JPanel pnlAddressInfo;
     private javax.swing.JPanel pnlBasicInfo;
+    private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCommunityName;
-    private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHouseNo1;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPatientId;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtStreetName;
     private javax.swing.JTextField txtZip;
@@ -280,7 +291,8 @@ public class ViewPatientProfile extends javax.swing.JPanel {
     private void populatePatientDetails() {
         
         txtName.setText(patient.getName());
-        txtDOB.setText(String.valueOf(new SimpleDateFormat("MM/dd/yyyy").format(patient.getDateOfBirth())));
+        txtAge.setText(String.valueOf(patient.getAge()));
+        //txtDOB.setText(String.valueOf(new SimpleDateFormat("MM/dd/yyyy").format(patient.getDateOfBirth())));
         txtPhone.setText(String.valueOf(patient.getPhone()));
         txtEmail.setText(patient.getEmail());
         txtCommunityName.setText(patient.getHouse().getHouseNumber());
