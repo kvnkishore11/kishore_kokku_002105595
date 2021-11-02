@@ -60,7 +60,6 @@ public class DoctorViewReport extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEncounterDetails = new javax.swing.JTable();
@@ -68,8 +67,6 @@ public class DoctorViewReport extends javax.swing.JPanel {
         cmbPatients = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         lblTitle1 = new javax.swing.JLabel();
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/agevsBPlevels.png"))); // NOI18N
 
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -176,7 +173,6 @@ public class DoctorViewReport extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewMoreDetails;
     private javax.swing.JComboBox<Object> cmbPatients;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitle;

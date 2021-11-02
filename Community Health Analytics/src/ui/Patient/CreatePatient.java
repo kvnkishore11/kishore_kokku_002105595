@@ -85,7 +85,7 @@ public class CreatePatient extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lblProductName2 = new javax.swing.JLabel();
-        txtName1 = new javax.swing.JTextField();
+        txtPatientName = new javax.swing.JTextField();
         txtPhone1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
@@ -226,8 +226,8 @@ public class CreatePatient extends javax.swing.JPanel {
         lblProductName2.setText(" Name");
         pnlBasicInfo.add(lblProductName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 30));
 
-        txtName1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlBasicInfo.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 182, -1));
+        txtPatientName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlBasicInfo.add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 182, -1));
 
         txtPhone1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         pnlBasicInfo.add(txtPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 182, -1));
@@ -284,7 +284,7 @@ public class CreatePatient extends javax.swing.JPanel {
         int age = 0;
         
         
-        patientName = txtPatientId.getText();
+        patientName = txtPatientName.getText();
        
         email = txtEmail.getText();
         houseNo = txtHouseNo.getText();
@@ -357,8 +357,8 @@ public class CreatePatient extends javax.swing.JPanel {
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHouseNo;
-    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtPatientId;
+    private javax.swing.JTextField txtPatientName;
     private javax.swing.JTextField txtPhone1;
     private javax.swing.JTextField txtStreetName;
     private javax.swing.JTextField txtZip;
