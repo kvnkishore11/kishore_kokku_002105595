@@ -51,7 +51,7 @@ public class ViewPatientProfile extends javax.swing.JPanel {
         txtZip = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtHouseNo1 = new javax.swing.JTextField();
+        txtHouseNo = new javax.swing.JTextField();
         pnlBasicInfo = new javax.swing.JPanel();
         lblProductName1 = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
@@ -130,8 +130,8 @@ public class ViewPatientProfile extends javax.swing.JPanel {
 
         pnlAddressInfo.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 40));
 
-        txtHouseNo1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        pnlAddressInfo.add(txtHouseNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 182, -1));
+        txtHouseNo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        pnlAddressInfo.add(txtHouseNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 182, -1));
 
         jPanel1.add(pnlAddressInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 650, 210));
 
@@ -280,7 +280,7 @@ public class ViewPatientProfile extends javax.swing.JPanel {
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCommunityName;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtHouseNo1;
+    private javax.swing.JTextField txtHouseNo;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPatientId;
     private javax.swing.JTextField txtPhone;
@@ -289,13 +289,13 @@ public class ViewPatientProfile extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populatePatientDetails() {
-        
+        txtPatientId.setText(String.valueOf(patient.getPatientId()));
         txtName.setText(patient.getName());
         txtAge.setText(String.valueOf(patient.getAge()));
         //txtDOB.setText(String.valueOf(new SimpleDateFormat("MM/dd/yyyy").format(patient.getDateOfBirth())));
         txtPhone.setText(String.valueOf(patient.getPhone()));
         txtEmail.setText(patient.getEmail());
-        txtCommunityName.setText(patient.getHouse().getHouseNumber());
+        txtHouseNo.setText(patient.getHouse().getHouseNumber());
         txtStreetName.setText(patient.getHouse().getStreetName());
         txtCommunityName.setText(patient.getHouse().getCommunityName());
         txtZip.setText(String.valueOf(patient.getHouse().getZipCode()));

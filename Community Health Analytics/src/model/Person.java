@@ -13,11 +13,11 @@ import java.util.Date;
  */
 public class Person {
     
-    String name;
-    long phone;
-    String email;
-    int age;
-    House house;
+    String name=null;
+    long phone=0;
+    String email=null;
+    int age=0;
+    House house=null;
     
     public String getName() {
         return name;

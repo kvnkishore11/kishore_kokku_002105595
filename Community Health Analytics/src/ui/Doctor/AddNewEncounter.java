@@ -68,7 +68,6 @@ public class AddNewEncounter extends javax.swing.JPanel {
         txtHr = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtRr = new javax.swing.JTextField();
-        btnAddCSV2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -221,17 +220,6 @@ public class AddNewEncounter extends javax.swing.JPanel {
         jPanel2.add(txtRr, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 134, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 590, 200));
-
-        btnAddCSV2.setBackground(new java.awt.Color(255, 204, 204));
-        btnAddCSV2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnAddCSV2.setForeground(new java.awt.Color(51, 51, 255));
-        btnAddCSV2.setText("Add CSV");
-        btnAddCSV2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddCSV2ActionPerformed(evt);
-            }
-        });
-        add(btnAddCSV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -240,50 +228,26 @@ public class AddNewEncounter extends javax.swing.JPanel {
         Patient selectedPatient = (Patient) patientComboBox.getSelectedItem();
         List<Encounter> encounterHistory = selectedPatient.getEncounterHistory().getEncounterHistory();
         Encounter newEncounter = new Encounter(); 
-//        String[] complaints = new String[3];
-//
-//        if(selectedPatient != null){
-//         
-//            
-//            if(!txtComplaint_1.getText().isEmpty())
-//                complaints[0] = txtComplaint_1.getText();
-//           
-//            
-//           if(!txtComplaint_2.getText().isEmpty())
-//                complaints[1] = txtComplaint_2.getText();
-//           
-//           
-//           if(!txtComplaint_3.getText().isEmpty()){
-//                complaints[2] = txtComplaint_3.getText();
-//           
-//           }
-//            newEncounter.setCompaints(complaints);
-//            
-//            if(txtDiagnosis.getText().isEmpty()){
-//                
-//                JOptionPane.showMessageDialog(this, "Fill in Diagnosis field", "Warning", JOptionPane.WARNING_MESSAGE);
-//                return;
-//            } 
-//            
+           
         if(selectedPatient != null){
             
             newEncounter.setPatient(selectedPatient);
             newEncounter.setEncounterDate(jDateChooser1.getDate());
-            
-          try{
-         newEncounter.setVitalSign(new VitalSign(Integer.parseInt(txtRr.getText()),Integer.parseInt(txtBp.getText()),
-            Integer.parseInt(txtHr.getText()), Double.parseDouble(txtTemperature.getText())));
-        }catch(NumberFormatException e){
-             JOptionPane.showMessageDialog(this, "Fill in All the fields along with valid data format", "Warning", JOptionPane.WARNING_MESSAGE);
-             return;
-        }
 
-         newEncounter.setHealthStatus();
-         encounterHistory.add(newEncounter);            
-         selectedPatient.updateHealthStatus();
+            try{
+                newEncounter.setVitalSign(new VitalSign(Integer.parseInt(txtRr.getText()),Integer.parseInt(txtBp.getText()),
+                   Integer.parseInt(txtHr.getText()), Double.parseDouble(txtTemperature.getText())));
+               }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, "Fill in All the fields along with valid data format", "Warning", JOptionPane.WARNING_MESSAGE);
+                    return;
+               }
 
-         JOptionPane.showMessageDialog(this, "Encounter details added to patient profile", "Information", JOptionPane.INFORMATION_MESSAGE);
-         backAction();
+             newEncounter.setHealthStatus();
+             encounterHistory.add(newEncounter);            
+             selectedPatient.updateHealthStatus();
+
+             JOptionPane.showMessageDialog(this, "Encounter details added to patient profile", "Information", JOptionPane.INFORMATION_MESSAGE);
+             backAction();
 
         }
  
@@ -301,59 +265,6 @@ public class AddNewEncounter extends javax.swing.JPanel {
 //        Encounter newEncounter = new Encounter(); 
 //        lblSampleAge.setText(Integer.toString(newEncounter.getAge()));
     }//GEN-LAST:event_jDateChooser1KeyReleased
-
-    private void btnAddCSV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCSV2ActionPerformed
-        // TODO add your handling code here:
-//        
-//        String path = "C:\\Users\\LENOVO\\Desktop\\patients.csv";
-//        String line = "";
-//
-//       try{
-//        BufferedReader br;
-//        br = new BufferedReader(new FileReader(path));
-//        
-//        int i = 0;
-//        int patientId=0;
-//        String name = ""; long phone= 0;
-//        String email=""; int age = 0;
-//        String houseNumber = "";
-//        String streetName = "";
-//        String communityName = "";
-//        int zipCode = 0;
-//          
-//        while((line=br.readLine()) != null){
-//            String[] values = line.split(",");
-//            Encounter e = new Encounter();
-//               
-//            e.setPatientId(Integer.parseInt(values[0]));
-//            e.setName(values[1]);
-//            e.setAge(Integer.parseInt(values[2]));
-//            e.setPhone(Long.parseLong(values[3]));
-//            e.setEmail(values[4]);
-//            //p.setHouseNumber(Integer.parseInt(values[5]));
-//
-//            encounterHistory.addPatient(p);
-//            i++;
-//                 
-//                
-//            }
-//            
-//        JOptionPane.showMessageDialog(this, String.valueOf(i) + " Encounters have been added to Encounter History");
-//        //refreshTable();
-//          
-//       } 
-//   
-//        catch ( FileNotFoundException e){
-//            JOptionPane.showMessageDialog(this, "The error message has been caught");
-//         } 
-//         catch (IOException ex)
-//         {
-//             
-//         }
-
-        
-        
-    }//GEN-LAST:event_btnAddCSV2ActionPerformed
     
     private void backAction() {
         workArea.remove(this);
@@ -363,7 +274,6 @@ public class AddNewEncounter extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddCSV2;
     private javax.swing.JButton btnSave;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;

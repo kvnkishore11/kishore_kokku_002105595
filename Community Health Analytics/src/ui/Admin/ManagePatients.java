@@ -48,12 +48,15 @@ public class ManagePatients extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(Patient p : patientDirectory.getPatientDirectory()) {
-            Object row[] = new Object[5];
+            Object row[] = new Object[8];
             row[0] = p;
             row[1] = p.getPatientId();
             row[2] = p.getAge();
             row[3] = p.getPhone();
-            row[4] = p.getEncounterHistory().size() == 0 ? "None" 
+            row[4] = p.getEmail();
+            row[5] = p.getHouse().getHouseNumber();
+            row[6] = p.getHouse().getCommunityName();
+            row[7] = p.getEncounterHistory().size() == 0 ? "None" 
                     : p.getEncounterHistory().getEncounterHistory().get(p.getEncounterHistory().size() - 1).getEncounterDate();
             model.addRow(row);
         }
@@ -83,17 +86,17 @@ public class ManagePatients extends javax.swing.JPanel {
         tblPatients.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Patient Id", "Age", "Phone", "Last encounter date"
+                "Patient Name", "Patient Id", "Age", "Phone", "Email", "House Number", "Community", "Last encounter date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -102,7 +105,7 @@ public class ManagePatients extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPatients);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 660, 450));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 930, 420));
 
         btnRemove.setBackground(new java.awt.Color(255, 51, 51));
         btnRemove.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -113,7 +116,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnRemoveActionPerformed(evt);
             }
         });
-        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 390, 150, 40));
+        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 600, 150, 40));
 
         btnView.setBackground(new java.awt.Color(255, 204, 204));
         btnView.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -124,7 +127,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnViewActionPerformed(evt);
             }
         });
-        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 160, 40));
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, 160, 40));
 
         btnAdd.setBackground(new java.awt.Color(102, 102, 255));
         btnAdd.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -136,7 +139,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnAddActionPerformed(evt);
             }
         });
-        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 150, 40));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 150, 40));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -166,7 +169,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 btnAddCSVActionPerformed(evt);
             }
         });
-        add(btnAddCSV, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, -1, -1));
+        add(btnAddCSV, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 620, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -212,6 +215,7 @@ public class ManagePatients extends javax.swing.JPanel {
                 community = communities.get(i);
         }
         
+      
         for(int i = 0; i < community.getNoOfHouses(); i++){
             if(community.getHouses().get(i).getId() == houseToBeDeAssociated.getId()){
                 houseIndex = i;
@@ -248,15 +252,17 @@ public class ManagePatients extends javax.swing.JPanel {
           
         while((line=br.readLine()) != null){
             String[] values = line.split(",");
-            Patient p = new Patient(patientId, name,phone, email, age,houseNumber, streetName,communityName,zipCode);
+            Patient p = new Patient(name,phone, email, age,houseNumber, streetName,communityName,zipCode,patientId);
                
             if (! arrlist.contains(Integer.parseInt(values[0]))){
                 p.setPatientId(Integer.parseInt(values[0]));
                 p.setName(values[1]);
                 p.setAge(Integer.parseInt(values[2]));
                 p.setPhone(Long.parseLong(values[3]));
-                p.setEmail(values[4]);
-              //  p.setHouseNumber(Integer.parseInt(values[5]));
+                 p.setEmail(values[4]);
+                p.getHouse().setHouseNumber(values[5]);
+                p.getHouse().setCommunityName(values[6]); 
+                
                 
                 patientDirectory.addPatient(p);
                 i++;

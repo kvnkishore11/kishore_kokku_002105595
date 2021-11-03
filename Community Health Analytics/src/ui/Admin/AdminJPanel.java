@@ -1,8 +1,4 @@
-/*
- * AdminJPanel.java
- *
- * Created on October 10, 2008, 8:50 AM
- */
+
 
 package ui.Admin;
 
