@@ -48,15 +48,15 @@ public class ManagePatients extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(Patient p : patientDirectory.getPatientDirectory()) {
-            Object row[] = new Object[8];
+            Object row[] = new Object[7];
             row[0] = p;
-            row[1] = p.getPatientId();
-            row[2] = p.getAge();
-            row[3] = p.getPhone();
-            row[4] = p.getEmail();
-            row[5] = p.getHouse().getHouseNumber();
-            row[6] = p.getHouse().getCommunityName();
-            row[7] = p.getEncounterHistory().size() == 0 ? "None" 
+           // row[1] = p.getPatientId();
+            row[1] = p.getAge();
+            row[2] = p.getPhone();
+            row[3] = p.getEmail();
+            row[4] = p.getHouse().getHouseNumber();
+            row[5] = p.getHouse().getCommunityName();
+            row[6] = p.getEncounterHistory().size() == 0 ? "None" 
                     : p.getEncounterHistory().getEncounterHistory().get(p.getEncounterHistory().size() - 1).getEncounterDate();
             model.addRow(row);
         }
@@ -86,17 +86,17 @@ public class ManagePatients extends javax.swing.JPanel {
         tblPatients.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         tblPatients.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Patient Name", "Patient Id", "Age", "Phone", "Email", "House Number", "Community", "Last encounter date"
+                "Patient Name", "Age", "Phone", "Email", "House Number", "Community", "Last encounter date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, true, true
+                false, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
