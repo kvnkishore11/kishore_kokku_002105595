@@ -185,7 +185,7 @@ public class CreateRestaurantsJPanel extends javax.swing.JPanel {
                 Restaurant restaurant = new Restaurant(NameJTxtField.getText(), AddressJTxtField.getText(), PhoneNumberJTxtField.getText(), UsernameJTxtField.getText(), PasswordJTxtField.getText(), new Menu());
                 UserAccount ua = ecosystem.getUserAccountDirectory().createUserAccount(UsernameJTxtField.getText(), PasswordJTxtField.getText(), new AdminRole());
 
-                System.out.println(ecosystem.getUserAccountDirectory());
+                //System.out.println(ecosystem.getUserAccountDirectory());
                 ecosystem.getUserAccountDirectory().addNewUser(ua);
                 ecosystem.getRestaurantDirectory().addRestaurant(restaurant);
 

@@ -2,6 +2,7 @@
 package Business;
 
 import Business.Customer.CustomerDirectory;
+import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
@@ -26,9 +27,12 @@ public class EcoSystem extends Organization{
         return business;
     }
 
+  
+
     public static void setBusiness(EcoSystem business) {
         EcoSystem.business = business;
     }
+    
     
     public static EcoSystem getInstance(){
         if(business==null){
@@ -55,4 +59,9 @@ public class EcoSystem extends Organization{
             return false;
         }
     }
+
+  
+    
+    
+    
 }

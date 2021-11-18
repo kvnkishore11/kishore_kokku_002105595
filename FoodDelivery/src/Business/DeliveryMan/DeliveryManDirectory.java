@@ -2,21 +2,30 @@
 package Business.DeliveryMan;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class DeliveryManDirectory {
     
-    ArrayList<DeliveryMan> deliveryManList = new ArrayList<>();
+    ArrayList<DeliveryMan> deliveryManList ;
+   
+    public DeliveryManDirectory() {
+        deliveryManList = new ArrayList();
+    }
+    
 
     public ArrayList<DeliveryMan> getDeliveryManList() {
         return deliveryManList;
     }
 
     public void setDeliveryManList(ArrayList<DeliveryMan> deliveryManList) {
+        
         this.deliveryManList = deliveryManList;
     }
 
     public void addDeliveryMan(DeliveryMan d) {
-        deliveryManList.add(d);
+      
+              deliveryManList.add(d);
+       
 
     }
 

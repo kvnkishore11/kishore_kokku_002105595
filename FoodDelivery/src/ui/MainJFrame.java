@@ -9,20 +9,23 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Restaurant.RestaurantDirectory;
+import Business.Customer.CustomerDirectory;
 
 
 public class MainJFrame extends javax.swing.JFrame {
-
-    private EcoSystem system;
+   
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    
+  
+    private EcoSystem ecosystem;
     Restaurant restaurant;
     Customer customer;
-    
+   
     public MainJFrame() {
         initComponents();
-        system = dB4OUtil.retrieveSystem();
-        this.setSize(800, 600);
+        ecosystem = dB4OUtil.retrieveSystem();
+        this.setSize(2000, 1000);
     }
 
     
@@ -149,26 +152,26 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-       // restaurant = null;
+        restaurant = null;
       
         String userName = userNameJTextField.getText();
         char[] passwordCharArray = passwordField.getPassword();
         String password = String.valueOf(passwordCharArray);
 
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+        UserAccount userAccount = ecosystem.getUserAccountDirectory().authenticateUser(userName, password);
         if (userAccount == null) {
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;
         } else {
-            
-                for (Restaurant r : system.getRestaurantDirectory().getRestaurantList()) {
-                if (r.getUsername().equals(userName)) {
-                    restaurant = r;
-                    break;
-                }
+                
+            for (Restaurant r : ecosystem.getRestaurantDirectory().getRestaurantList()) {
+            if (r.getUsername().equals(userName)) {
+                restaurant = r;
+                break;
+            }
             }
                 
-            for (Customer c : system.getCustomerDirectory().getCustomerList()) {
+            for (Customer c : ecosystem.getCustomerDirectory().getCustomerList()) {
                 if (c.getUsername().equals(userName)) {
                     customer = c;
                     break;
@@ -176,11 +179,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
             
             CardLayout layout = (CardLayout) container.getLayout();
-            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, system, restaurant, customer));
+            container.add("workArea", userAccount.getRole().createWorkArea(container, userAccount, ecosystem, restaurant, customer));
             layout.next(container);
-            
-            
-            
+         
         }
 
         loginJButton.setEnabled(false);
@@ -206,23 +207,20 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
-        dB4OUtil.storeSystem(system);
+        dB4OUtil.storeSystem(ecosystem);
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     
     
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
 
-        SignUpJPanel signUpJPanel = new SignUpJPanel(container, system);
+        SignUpJPanel signUpJPanel = new SignUpJPanel(container, ecosystem);
         container.add("SignUpJPanel", signUpJPanel);
-
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
     }//GEN-LAST:event_btnSignUpActionPerformed
 
-    
-    
-   
+   //Program starts executing from here
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

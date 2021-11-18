@@ -6,8 +6,12 @@ import java.util.ArrayList;
 
 public class RestaurantDirectory {
 
-    ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
-
+    ArrayList<Restaurant> restaurantList ;
+    
+    public RestaurantDirectory() {
+        restaurantList = new ArrayList();
+    }
+    
     public ArrayList<Restaurant> getRestaurantList() {
         return restaurantList;
     }

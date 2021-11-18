@@ -186,8 +186,10 @@ public class CreateDeliverymenJPanel extends javax.swing.JPanel {
 
                 System.out.println(ecosystem.getUserAccountDirectory());
                 ecosystem.getUserAccountDirectory().addNewUser(ua);
-//            System.out.println(ecosystem.getCustomerDirectory());
+//              System.out.println(ecosystem.getCustomerDirectory());
                 ecosystem.getDeliveryManDirectory().addDeliveryMan(deli);
+                
+                
                 NameJTxtField.setText("");
                 PasswordJTxtField.setText("");
                 UsernameJTxtField.setText("");
