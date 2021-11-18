@@ -268,7 +268,7 @@ public class AddNewEncounter extends javax.swing.JPanel {
     
     private void backAction() {
         workArea.remove(this);
-//        DoctorWorkAreaJPanel doctorWorkAreaJPanel = new DoctorWorkAreaJPanel(workArea, healthcareSystem);
+//      DoctorWorkAreaJPanel doctorWorkAreaJPanel = new DoctorWorkAreaJPanel(workArea, healthcareSystem);
         CardLayout layout = (CardLayout) workArea.getLayout();
         layout.next(workArea);
     }

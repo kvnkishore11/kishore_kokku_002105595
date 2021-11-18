@@ -25,6 +25,7 @@ public class Patient extends Person{
         //this.patientId = patientId;
         this.encounterHistory = new EncounterHistory();
         this.healthStatus = "Normal";
+        this.patientId = patientId;
     }
     
     public int getPatientId() {

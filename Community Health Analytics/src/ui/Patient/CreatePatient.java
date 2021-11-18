@@ -311,9 +311,7 @@ public class CreatePatient extends javax.swing.JPanel {
         }
         
         patient = new Patient( patientName, phone, email, age, houseNo, streetName, communityName, zip,patientId);
-        System.out.println(patient.getPatientId());
-        System.out.println(txtPatientId.getText());
-        System.out.println(Integer.parseInt(txtPatientId.getText()));
+      
         //add this house to selected comunity also
         patientDirectory.addPatient(patient);
         selectedCommunity.addHouseToCommunity(new House(houseNo, streetName, communityName, zip));
