@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class CartModel {
     String restaurant;

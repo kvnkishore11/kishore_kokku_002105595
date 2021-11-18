@@ -29,7 +29,7 @@ import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class createLogin extends javax.swing.JPanel {
 

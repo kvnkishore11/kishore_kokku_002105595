@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class FinalOrder {
     String restaurant;
