@@ -48,7 +48,8 @@ public class EcoSystem extends Organization{
         return roleList;
     }
     private EcoSystem(){
-        super("New EcoSystem");
+       // super("New EcoSystem");
+       super();
     }
 
     

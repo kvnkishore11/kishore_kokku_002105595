@@ -40,24 +40,28 @@ public abstract class Organization {
         }
     }
 
-    public Organization(String name) {
-        this.name = name;
-        workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        customerDirectory = new CustomerDirectory();
-        deliveryManDirectory = new DeliveryManDirectory();
-        restaurantDirectory = new RestaurantDirectory();
-        organizationID = counter;
-        ++counter;
-    }
+//    public Organization(String name) {
+//        this.name = name;
+//        workQueue = new WorkQueue();
+//        employeeDirectory = new EmployeeDirectory();
+//        userAccountDirectory = new UserAccountDirectory();
+//        customerDirectory = new CustomerDirectory();
+//        deliveryManDirectory = new DeliveryManDirectory();
+//        restaurantDirectory = new RestaurantDirectory();
+//        organizationID = counter;
+//        ++counter;
+//    }
 
     public Organization() {
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
         organizationID = counter;
+        customerDirectory = new CustomerDirectory();
+        deliveryManDirectory = new DeliveryManDirectory();
+        restaurantDirectory = new RestaurantDirectory();
         ++counter;
+        System.out.print("Counter" + String.valueOf(counter));
 
     }
 

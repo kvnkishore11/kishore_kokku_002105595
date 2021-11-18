@@ -169,6 +169,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 restaurant = r;
                 break;
             }
+            
             }
                 
             for (Customer c : ecosystem.getCustomerDirectory().getCustomerList()) {
