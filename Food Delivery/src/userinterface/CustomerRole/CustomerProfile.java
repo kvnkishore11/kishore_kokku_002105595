@@ -71,6 +71,8 @@ public class CustomerProfile extends javax.swing.JPanel {
         reviewItem = new javax.swing.JTextField();
         reviewResto = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         jLabel1.setText("Username:");
 
         ordersList.setModel(new javax.swing.table.DefaultTableModel(

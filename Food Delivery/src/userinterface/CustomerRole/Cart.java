@@ -60,6 +60,8 @@ public class Cart extends javax.swing.JPanel {
         Order = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -70,8 +72,12 @@ public class Cart extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(cartTable);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("Cart");
 
+        Order.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Order.setForeground(new java.awt.Color(51, 51, 255));
         Order.setText("Order");
         Order.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,10 +97,6 @@ public class Cart extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(1173, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(64, 64, 64))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(557, 557, 557)
@@ -104,21 +106,24 @@ public class Cart extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(532, 532, 532)
-                        .addComponent(Order)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Order))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(btnBack)))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addComponent(btnBack)
-                .addGap(167, 167, 167)
+                .addGap(190, 190, 190)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(Order)
-                .addContainerGap(512, Short.MAX_VALUE))
+                .addContainerGap(504, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

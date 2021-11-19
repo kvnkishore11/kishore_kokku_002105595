@@ -78,6 +78,7 @@ public class manageOrders extends javax.swing.JPanel {
         btnAssignDel = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("All available Orders");

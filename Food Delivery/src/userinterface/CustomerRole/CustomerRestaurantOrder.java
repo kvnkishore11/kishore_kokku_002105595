@@ -63,6 +63,8 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
 
         jLabel1.setText("jLabel1");
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         jLabel2.setText("Items Available");
 
         restaurantItems.setModel(new javax.swing.table.DefaultTableModel(

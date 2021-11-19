@@ -61,6 +61,8 @@ public class DeliveryProfile extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         jLabel1.setText("Username");
 
         delName.setText("<Username>");

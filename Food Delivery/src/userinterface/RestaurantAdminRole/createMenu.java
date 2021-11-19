@@ -57,6 +57,8 @@ public class createMenu extends javax.swing.JPanel {
         btnAddItem = new javax.swing.JButton();
         back = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         jLabel2.setText("Item List");
 
         jScrollPane1.setViewportView(menuList);

@@ -59,6 +59,8 @@ public class OrdersDelivery extends javax.swing.JPanel {
         btnAssignToMe = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+
         deliveryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

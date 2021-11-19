@@ -68,6 +68,10 @@ public class createLogin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnHome = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -79,50 +83,14 @@ public class createLogin extends javax.swing.JPanel {
         txtCnfrmPwd = new javax.swing.JTextField();
         roleCmb = new javax.swing.JComboBox<>();
         btnCreateUser = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        btnHome = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtRestaurantName = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 153, 204));
+        setForeground(new java.awt.Color(51, 51, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Username:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 76, -1));
-
-        jLabel2.setText("Password:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 109, -1));
-
-        jLabel3.setText("Role:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
-
-        jLabel4.setText("Name:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
-
-        jLabel5.setText("Confirm Password:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 103, -1));
-        add(txtUName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 103, -1));
-        add(txtPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 103, -1));
-        add(txtCnfrmPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 103, -1));
-
-        roleCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurant Admin", "Customer", "Delivery Man" }));
-        roleCmb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roleCmbActionPerformed(evt);
-            }
-        });
-        add(roleCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 180, -1));
-
-        btnCreateUser.setText("create");
-        btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateUserActionPerformed(evt);
-            }
-        });
-        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, -1, -1));
-
-        jLabel6.setText("Create new user");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 110, -1));
 
         btnHome.setText("Back");
         btnHome.addActionListener(new java.awt.event.ActionListener() {
@@ -130,13 +98,114 @@ public class createLogin extends javax.swing.JPanel {
                 btnHomeActionPerformed(evt);
             }
         });
-        add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Logged in  as   SYSTEM ADMINISTRATOR");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 470, 50));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setText("Username:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 76, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("Password:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 109, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel3.setText("Role:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel4.setText("Name:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel5.setText("Confirm Password:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 130, -1));
+        jPanel1.add(txtUName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 110, -1));
+        jPanel1.add(txtPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 110, -1));
+        jPanel1.add(txtCnfrmPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 110, -1));
+
+        roleCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurant Admin", "Customer", "Delivery Man" }));
+        roleCmb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roleCmbActionPerformed(evt);
+            }
+        });
+        jPanel1.add(roleCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 180, -1));
+
+        btnCreateUser.setBackground(new java.awt.Color(255, 153, 153));
+        btnCreateUser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnCreateUser.setForeground(new java.awt.Color(51, 51, 255));
+        btnCreateUser.setText("create");
+        btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateUserActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 255));
         jLabel7.setText("Restaurant name:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 98, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 120, -1));
 
         txtRestaurantName.setEditable(false);
-        add(txtRestaurantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 129, -1));
+        jPanel1.add(txtRestaurantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 129, -1));
+
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Create new user");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(305, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(237, 237, 237))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 50));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 740, 450));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
@@ -220,12 +289,16 @@ public class createLogin extends javax.swing.JPanel {
     private javax.swing.JButton btnCreateUser;
     private javax.swing.JButton btnHome;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JComboBox<String> roleCmb;
     private javax.swing.JTextField txtCnfrmPwd;
     private javax.swing.JTextField txtName;
