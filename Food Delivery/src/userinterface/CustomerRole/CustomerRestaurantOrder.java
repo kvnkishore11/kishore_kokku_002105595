@@ -21,7 +21,7 @@ import userinterface.createNewUser.createLogin;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class CustomerRestaurantOrder extends javax.swing.JPanel {
 
@@ -111,7 +111,7 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addGap(97, 97, 97)
                 .addComponent(btnViewProfile)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(761, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +126,7 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addToCart)
                     .addComponent(proceedToCart))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(509, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -84,15 +84,26 @@ public class createLogin extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtRestaurantName = new javax.swing.JTextField();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Username:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 76, -1));
 
         jLabel2.setText("Password:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 109, -1));
 
         jLabel3.setText("Role:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
 
         jLabel4.setText("Name:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
 
         jLabel5.setText("Confirm Password:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 103, -1));
+        add(txtUName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 103, -1));
+        add(txtPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 103, -1));
+        add(txtCnfrmPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 103, -1));
 
         roleCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurant Admin", "Customer", "Delivery Man" }));
         roleCmb.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +111,7 @@ public class createLogin extends javax.swing.JPanel {
                 roleCmbActionPerformed(evt);
             }
         });
+        add(roleCmb, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 180, -1));
 
         btnCreateUser.setText("create");
         btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
@@ -107,8 +119,10 @@ public class createLogin extends javax.swing.JPanel {
                 btnCreateUserActionPerformed(evt);
             }
         });
+        add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, -1, -1));
 
         jLabel6.setText("Create new user");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 110, -1));
 
         btnHome.setText("Back");
         btnHome.addActionListener(new java.awt.event.ActionListener() {
@@ -116,81 +130,13 @@ public class createLogin extends javax.swing.JPanel {
                 btnHomeActionPerformed(evt);
             }
         });
+        add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         jLabel7.setText("Restaurant name:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 98, -1));
 
         txtRestaurantName.setEditable(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addComponent(btnHome)
-                .addGap(51, 51, 51))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(btnCreateUser))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUName, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCnfrmPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roleCmb, 0, 129, Short.MAX_VALUE)
-                            .addComponent(txtRestaurantName))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(btnHome))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtUName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCnfrmPwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(roleCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtRestaurantName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(btnCreateUser)
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
+        add(txtRestaurantName, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 450, 129, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed

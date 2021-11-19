@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class createMenu extends javax.swing.JPanel {
 
@@ -91,7 +91,7 @@ public class createMenu extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtAddItem, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAddItem))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(944, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(back)
@@ -113,7 +113,7 @@ public class createMenu extends javax.swing.JPanel {
                         .addComponent(txtAddItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(btnAddItem)))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(540, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

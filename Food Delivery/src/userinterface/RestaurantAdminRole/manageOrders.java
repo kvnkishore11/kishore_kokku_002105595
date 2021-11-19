@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author chara
+ * @author Kishore KVN
  */
 public class manageOrders extends javax.swing.JPanel {
 
@@ -78,7 +78,10 @@ public class manageOrders extends javax.swing.JPanel {
         btnAssignDel = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("All available Orders");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
 
         ordersAvailble.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,14 +93,18 @@ public class manageOrders extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(ordersAvailble);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 437, 169));
+
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
             }
         });
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
         jLabel2.setText("Current and previous orders");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 166, -1));
 
         statusOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,17 +116,23 @@ public class manageOrders extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(statusOrders);
 
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 540, 167));
+
         jLabel3.setText("Assign DeliveryMan");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 92, -1));
 
         delDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delDropDownActionPerformed(evt);
             }
         });
+        add(delDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 100, -1));
 
         jLabel4.setText("OrderId");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, 62, -1));
 
         jLabel5.setText("Customer:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 360, 62, -1));
 
         delCusto.setEditable(false);
         delCusto.addActionListener(new java.awt.event.ActionListener() {
@@ -127,12 +140,18 @@ public class manageOrders extends javax.swing.JPanel {
                 delCustoActionPerformed(evt);
             }
         });
+        add(delCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 360, 100, -1));
 
         jLabel6.setText("Item");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 360, -1, -1));
 
         delItem.setEditable(false);
+        add(delItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 360, 84, -1));
 
         jLabel7.setText("DeliveryMan");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 400, -1, -1));
+
+        add(delList, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 100, -1));
 
         btnAssignDel.setText("assign");
         btnAssignDel.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +159,7 @@ public class manageOrders extends javax.swing.JPanel {
                 btnAssignDelActionPerformed(evt);
             }
         });
+        add(btnAssignDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 400, -1, -1));
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -147,92 +167,7 @@ public class manageOrders extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(226, 226, 226)
-                                .addComponent(btnAccept))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(delDropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(delCusto)
-                                    .addComponent(delList, 0, 100, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(delItem, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnAssignDel)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 52, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAccept)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2)
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(delDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(delCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(delItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(delList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAssignDel))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
