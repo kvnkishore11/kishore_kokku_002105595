@@ -37,6 +37,7 @@ public abstract class Organization {
         SysAdmin("Sysadmin");
         
         private String value;
+        
         private Type(String value) {
             this.value = value;
         }
@@ -57,6 +58,7 @@ public abstract class Organization {
     public Organization(){
         
     }
+    
     public abstract ArrayList<Role> getSupportedRole();
     
     public UserAccountDirectory getUserAccountDirectory() {

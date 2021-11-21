@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Customer {
     String customerName;
     UserAccount ua;
+    
     public Customer(UserAccount ua)
     {
         this.ua = ua;
@@ -34,6 +35,7 @@ public class Customer {
     public void setCart(ArrayList<CartModel> cart) {
         this.cart = cart;
     }
+    
     public String getCustomerName() {
         return customerName;
     }

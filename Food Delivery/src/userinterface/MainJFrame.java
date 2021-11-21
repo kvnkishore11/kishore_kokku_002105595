@@ -222,10 +222,7 @@ public class MainJFrame extends javax.swing.JFrame {
         this.ua = userDirectory.authenticateUser(username, password);
         if(ua.getRole().toString().equals("Business.Role.SystemAdminRole"))
         {
-            btnLogout.setEnabled(true); 
-            userNameJTextField.setEnabled(false);
-            passwordField.setEnabled(false);
-            btnLogin.setEnabled(false);
+            performLogin();
             SystemAdminWorkAreaJPanel sa = new SystemAdminWorkAreaJPanel(container, ecosystem);
             container.add("Sysadmin",sa);
             CardLayout crdLyt = (CardLayout) container.getLayout();
@@ -234,11 +231,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         else if(ua.getRole().toString().equals("Business.Role.AdminRole"))
         {
-            btnLogout.setEnabled(true); 
-            userNameJTextField.setEnabled(false);
-            passwordField.setEnabled(false);
-            btnLogin.setEnabled(false);
-            
+            performLogin();
             AdminWorkAreaJPanel aw = new AdminWorkAreaJPanel(container,ua,ecosystem);
             container.add("RestaurantAdmin",aw);
             CardLayout crdLyt = (CardLayout) container.getLayout();
@@ -247,10 +240,8 @@ public class MainJFrame extends javax.swing.JFrame {
         
         else if(ua.getRole().toString().equals("Business.Role.DeliverManRole"))
         {
-            btnLogout.setEnabled(true); 
-            userNameJTextField.setEnabled(false);
-            passwordField.setEnabled(false);
-            btnLogin.setEnabled(false);
+           
+            performLogin();
             OrdersDelivery dw = new OrdersDelivery(container, ua, ecosystem);
             container.add("DeliveryMan",dw);
             CardLayout crdLyt = (CardLayout) container.getLayout();
@@ -259,11 +250,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         else if(ua.getRole().toString().equals("Business.Role.CustomerRole"))
         {
-            btnLogout.setEnabled(true); 
-            userNameJTextField.setEnabled(false);
-            passwordField.setEnabled(false);
-            btnLogin.setEnabled(false);
-            
+            performLogin();
             CustomerRestaurantOrder ca = new CustomerRestaurantOrder(container, ua,ecosystem);
             container.add("Customer",ca);
             CardLayout crdLyt = (CardLayout) container.getLayout();
@@ -293,7 +280,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
-         dB4OUtil.storeSystem(ecosystem);
+        dB4OUtil.storeSystem(ecosystem);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
@@ -339,6 +326,15 @@ public class MainJFrame extends javax.swing.JFrame {
                 new MainJFrame().setVisible(true);
             }
         });
+    }
+    
+    private void performLogin(){
+        btnLogout.setEnabled(true); 
+        userNameJTextField.setEnabled(false);
+        passwordField.setEnabled(false);
+        btnLogin.setEnabled(false);
+    
+    
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;

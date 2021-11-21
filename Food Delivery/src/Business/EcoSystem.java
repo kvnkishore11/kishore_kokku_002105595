@@ -23,6 +23,8 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private RestaurantDirectory restaurantDirectory;
+    private CustomerDirectory customerDirectory;
+    private DeliveryManDirectory deliveryManDirectory;
 
     public RestaurantDirectory getRestaurantDirectory() {
         return restaurantDirectory;
@@ -47,14 +49,18 @@ public class EcoSystem extends Organization{
     public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
         this.deliveryManDirectory = deliveryManDirectory;
     }
-    private CustomerDirectory customerDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
+    
 
     public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
 
         this.restaurantDirectory = restaurantDirectory;
         this.customerDirectory = customerDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
+    }
+    
+       
+    private EcoSystem(){
+        super(null);
     }
     
     public static EcoSystem getInstance(){
@@ -65,19 +71,6 @@ public class EcoSystem extends Organization{
     }
     
     
-    
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<Role>();
-        roleList.add(new SystemAdminRole());
-        return roleList;
-    }
-    private EcoSystem(){
-        super(null);
-       // networkList=new ArrayList<Network>();
-    }
-
-    
     public boolean checkIfUserIsUnique(String userName){
         UserAccountDirectory usersList = business.getUserAccountDirectory();
         ArrayList<UserAccount> userAccounts = usersList.getUserAccountList();
@@ -87,7 +80,15 @@ public class EcoSystem extends Organization{
             if(ua.getUsername().equals(userName))
                 return false;
         }
-        
        return true;
     }
+    
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList = new ArrayList<Role>();
+        roleList.add(new SystemAdminRole());
+        return roleList;
+    }
+    
 }

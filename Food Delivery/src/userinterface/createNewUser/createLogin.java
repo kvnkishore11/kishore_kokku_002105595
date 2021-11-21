@@ -46,6 +46,8 @@ public class createLogin extends javax.swing.JPanel {
     CustomerDirectory cd;
     DeliveryManDirectory dd;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
+    
     public createLogin(JPanel userProcessContainer,EcoSystem ecosystem) {
        this.ecosystem = ecosystem;
        this.userProcessContainer = userProcessContainer;
@@ -155,7 +157,7 @@ public class createLogin extends javax.swing.JPanel {
         jPanel1.add(txtPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 110, -1));
         jPanel1.add(txtCnfrmPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 110, -1));
 
-        roleCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurant Admin", "Customer", "Delivery Man" }));
+        roleCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Restaurant Admin", "Customer", "Delivery Man" }));
         roleCmb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roleCmbActionPerformed(evt);
