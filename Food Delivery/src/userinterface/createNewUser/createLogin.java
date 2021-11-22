@@ -247,7 +247,7 @@ public class createLogin extends javax.swing.JPanel {
                 || txtCnfrmPwd.getText().isEmpty()
                 || txtRestaurantName.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please provide all the details of the Customer");
-            return;
+            return;}
         
         
         UserAccountDirectory usersList = ecosystem.getUserAccountDirectory();
