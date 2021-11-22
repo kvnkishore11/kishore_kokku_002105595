@@ -276,11 +276,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         container.removeAll();
         mainPageIntro.setVisible(true);
-        JPanel blankJP = new JPanel();
-        container.add("blank", blankJP);
-        CardLayout crdLyt = (CardLayout) container.getLayout();
-        crdLyt.next(container);
-        dB4OUtil.storeSystem(ecosystem);
+//        JPanel blankJP = new JPanel();
+//        container.add("blank", blankJP);
+//        CardLayout crdLyt = (CardLayout) container.getLayout();
+//        crdLyt.next(container);
+//        dB4OUtil.storeSystem(ecosystem);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
