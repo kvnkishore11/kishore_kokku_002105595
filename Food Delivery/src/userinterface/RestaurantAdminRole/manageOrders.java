@@ -59,11 +59,9 @@ public class manageOrders extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordersAvailble = new javax.swing.JTable();
         btnAccept = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         statusOrders = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -83,14 +81,11 @@ public class manageOrders extends javax.swing.JPanel {
         lblTitle1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         lblTitle3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        lblTitle4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("All available Orders");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
 
         ordersAvailble.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,11 +108,6 @@ public class manageOrders extends javax.swing.JPanel {
             }
         });
         add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel2.setText("Current and previous orders");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 260, -1));
 
         statusOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,7 +206,7 @@ public class manageOrders extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(0, 51, 255));
 
         lblTitle1.setBackground(new java.awt.Color(0, 51, 255));
-        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle1.setText("Assign Delivery Man");
 
@@ -225,39 +215,68 @@ public class manageOrders extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(134, 134, 134)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 30));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 30));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 420, 460));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 230, 420, 460));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+
+        lblTitle3.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitle3.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle3.setText("Current and Previous Orders");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(lblTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblTitle3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 420, 30));
+        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 690, 30));
 
-        lblTitle3.setBackground(new java.awt.Color(0, 51, 255));
-        lblTitle3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lblTitle3.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitle3.setText("Assign Delivery Man");
-        add(lblTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 271, 30));
+        jPanel5.setBackground(new java.awt.Color(204, 51, 0));
+
+        lblTitle4.setBackground(new java.awt.Color(255, 0, 51));
+        lblTitle4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitle4.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle4.setText("All Available Orders");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(262, Short.MAX_VALUE)
+                .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(157, 157, 157))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblTitle4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 690, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
@@ -334,8 +353,6 @@ public class manageOrders extends javax.swing.JPanel {
     private javax.swing.JTextField delItem;
     private javax.swing.JComboBox<String> delList;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -344,11 +361,13 @@ public class manageOrders extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JLabel lblTitle2;
     private javax.swing.JLabel lblTitle3;
+    private javax.swing.JLabel lblTitle4;
     private javax.swing.JTable ordersAvailble;
     private javax.swing.JTable statusOrders;
     // End of variables declaration//GEN-END:variables

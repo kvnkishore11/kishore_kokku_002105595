@@ -45,7 +45,6 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         restosTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -59,15 +58,12 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setPreferredSize(new java.awt.Dimension(1300, 800));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("Restaurant Directory");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 160, -1));
 
         restosTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,7 +75,7 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(restosTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, 103));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, -1, 103));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 255));
@@ -89,7 +85,7 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 255));
@@ -106,17 +102,17 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
                 restoListActionPerformed(evt);
             }
         });
-        add(restoList, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 124, -1));
+        add(restoList, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 124, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
         jLabel2.setText("Restaurant");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 91, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 520, 91, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 255));
         jLabel3.setText("username");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 560, -1, -1));
 
         txtUnamePwd.setEditable(false);
         txtUnamePwd.addActionListener(new java.awt.event.ActionListener() {
@@ -124,13 +120,13 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
                 txtUnamePwdActionPerformed(evt);
             }
         });
-        add(txtUnamePwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, 124, -1));
+        add(txtUnamePwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, 124, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("password:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 63, -1));
-        add(txtRestoUpdtPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 390, 124, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 600, 63, -1));
+        add(txtRestoUpdtPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, 124, -1));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 51, 255));
@@ -140,21 +136,23 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 460, -1, -1));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 670, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel17.setForeground(new java.awt.Color(204, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Logged in  as   SYSTEM ADMINISTRATOR");
+        jLabel17.setText("Logged in  as   System Administrator");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,6 +162,29 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
         );
 
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 470, 50));
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
+
+        lblTitle1.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Restaurant Directory");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(164, Short.MAX_VALUE)
+                .addComponent(lblTitle1)
+                .addGap(203, 203, 203))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 510, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -221,13 +242,14 @@ public class ManageRestaurantsWorkArena extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
     private javax.swing.JComboBox<String> restoList;
     private javax.swing.JTable restosTable;
     private javax.swing.JTextField txtRestoUpdtPwd;

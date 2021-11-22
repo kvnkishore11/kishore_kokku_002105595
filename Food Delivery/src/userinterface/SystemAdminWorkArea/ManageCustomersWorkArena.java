@@ -44,7 +44,6 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         custoTable = new javax.swing.JTable();
         btnDelete = new javax.swing.JButton();
@@ -58,14 +57,11 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("CustomerDirectory");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 212, 173, -1));
 
         custoTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,7 +73,7 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(custoTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 250, 389, 141));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 250, 400, 240));
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(51, 51, 255));
@@ -87,7 +83,7 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 409, -1, -1));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 255));
@@ -97,7 +93,7 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
@@ -136,10 +132,12 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
         });
         add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(947, 389, -1, -1));
 
+        jPanel5.setBackground(new java.awt.Color(204, 0, 204));
+
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel17.setForeground(new java.awt.Color(255, 255, 204));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Logged in  as   SYSTEM ADMINISTRATOR");
+        jLabel17.setText("Logged in  as   System Administrator");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -158,6 +156,29 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
         );
 
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 470, 50));
+
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
+
+        lblTitle1.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Customer Directory");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(lblTitle1)
+                .addContainerGap(178, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 460, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -215,13 +236,14 @@ public class ManageCustomersWorkArena extends javax.swing.JPanel {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JTable custoTable;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
     private javax.swing.JComboBox<String> listCustomers;
     private javax.swing.JTextField txtUCustUpdate;
     private javax.swing.JTextField txtUpwdCusto;
