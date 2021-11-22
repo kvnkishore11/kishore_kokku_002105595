@@ -43,53 +43,33 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        submitJButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        submitJButton.setForeground(new java.awt.Color(51, 51, 255));
         submitJButton.setText("Submit Result");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("Result");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
+        add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 88, -1));
 
+        backJButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(51, 51, 255));
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(1124, Short.MAX_VALUE)
-                .addComponent(submitJButton)
-                .addGap(63, 63, 63))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backJButton)
-                    .addComponent(jLabel1))
-                .addGap(46, 46, 46)
-                .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(submitJButton)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(backJButton)
-                .addContainerGap(551, Short.MAX_VALUE))
-        );
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

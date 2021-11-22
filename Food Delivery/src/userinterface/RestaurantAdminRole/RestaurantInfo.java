@@ -40,7 +40,6 @@ public class RestaurantInfo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,60 +51,103 @@ public class RestaurantInfo extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Restaurant info");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 196, 120, 20));
-
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
         jLabel2.setText("username:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 239, 82, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 82, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 255));
         jLabel3.setText("password:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 110, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 110, -1));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 157, 51, -1));
 
         txtUserResto.setEditable(false);
+        txtUserResto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtUserResto.setForeground(new java.awt.Color(0, 51, 255));
         txtUserResto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserRestoActionPerformed(evt);
             }
         });
-        add(txtUserResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 92, -1));
+        add(txtUserResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 130, -1));
 
         txtPwdResto.setEditable(false);
-        add(txtPwdResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 92, -1));
+        txtPwdResto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtPwdResto.setForeground(new java.awt.Color(0, 51, 255));
+        add(txtPwdResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 130, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 51, 255));
         jLabel5.setText("Address:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 317, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, -1, -1));
 
+        txtAddResto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtAddResto.setForeground(new java.awt.Color(0, 51, 255));
         txtAddResto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAddRestoActionPerformed(evt);
             }
         });
-        add(txtAddResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 92, -1));
-        add(txtCityResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 92, -1));
+        add(txtAddResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 130, -1));
 
+        txtCityResto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtCityResto.setForeground(new java.awt.Color(0, 51, 255));
+        add(txtCityResto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 130, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 51, 255));
         jLabel6.setText("City:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 351, 51, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 51, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 255));
         jButton1.setText("Update");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 51, 255));
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1225, 31, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Restaurant Info");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(555, Short.MAX_VALUE)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(588, 588, 588))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUserRestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserRestoActionPerformed
@@ -133,12 +175,13 @@ public class RestaurantInfo extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblTitle1;
     private javax.swing.JTextField txtAddResto;
     private javax.swing.JTextField txtCityResto;
     private javax.swing.JTextField txtPwdResto;

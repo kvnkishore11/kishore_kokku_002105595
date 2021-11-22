@@ -53,11 +53,13 @@ public class Cart extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         cartTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         Order = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,9 +71,7 @@ public class Cart extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(cartTable);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel1.setText("Cart");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 200, 740, 230));
 
         Order.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Order.setForeground(new java.awt.Color(51, 51, 255));
@@ -81,6 +81,7 @@ public class Cart extends javax.swing.JPanel {
                 OrderActionPerformed(evt);
             }
         });
+        add(Order, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, -1, -1));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -88,40 +89,29 @@ public class Cart extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 12, 70, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(557, 557, 557)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(364, 364, 364)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(532, 532, 532)
-                        .addComponent(Order))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(btnBack)))
-                .addContainerGap(500, Short.MAX_VALUE))
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Cart");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(547, Short.MAX_VALUE)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(497, 497, 497))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack)
-                .addGap(190, 190, 190)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(Order)
-                .addContainerGap(504, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void OrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderActionPerformed
@@ -158,8 +148,9 @@ public class Cart extends javax.swing.JPanel {
     private javax.swing.JButton Order;
     private javax.swing.JButton btnBack;
     private javax.swing.JTable cartTable;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
     // End of variables declaration//GEN-END:variables
 
     public void populateTable() {

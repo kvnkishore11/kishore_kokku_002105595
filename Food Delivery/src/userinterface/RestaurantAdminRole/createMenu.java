@@ -56,19 +56,34 @@ public class createMenu extends javax.swing.JPanel {
         txtAddItem = new javax.swing.JTextField();
         btnAddItem = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lblTitle2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 78, -1, -1));
 
-        jLabel2.setText("Item List");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel2.setText("Enter the item to be added");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 180, 22));
 
         jScrollPane1.setViewportView(menuList);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, 300));
+        add(txtAddItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, 170, -1));
+
+        btnAddItem.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAddItem.setForeground(new java.awt.Color(51, 51, 255));
         btnAddItem.setText("Add Item");
         btnAddItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddItemActionPerformed(evt);
             }
         });
+        add(btnAddItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 100, -1));
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -76,47 +91,52 @@ public class createMenu extends javax.swing.JPanel {
                 backActionPerformed(evt);
             }
         });
+        add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAddItem, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddItem))))
-                .addContainerGap(944, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(back)
-                .addGap(48, 48, 48))
+        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
+
+        lblTitle1.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Directory");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(back)
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtAddItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnAddItem)))
-                .addContainerGap(540, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 200, 30));
+
+        jPanel2.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle2.setText("Items List");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(523, Short.MAX_VALUE)
+                .addComponent(lblTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(521, 521, 521))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddItemActionPerformed
@@ -139,7 +159,11 @@ public class createMenu extends javax.swing.JPanel {
     private javax.swing.JButton btnAddItem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
+    private javax.swing.JLabel lblTitle2;
     private javax.swing.JList<String> menuList;
     private javax.swing.JTextField txtAddItem;
     // End of variables declaration//GEN-END:variables

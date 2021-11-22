@@ -66,7 +66,10 @@ public class manageOrders extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         statusOrders = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblTitle2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         delDropDown = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -76,13 +79,18 @@ public class manageOrders extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         delList = new javax.swing.JComboBox<>();
         btnAssignDel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblTitle3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("All available Orders");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
 
         ordersAvailble.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,18 +102,22 @@ public class manageOrders extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(ordersAvailble);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 437, 169));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 210, 640, 169));
 
+        btnAccept.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAccept.setForeground(new java.awt.Color(51, 51, 255));
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 255));
         jLabel2.setText("Current and previous orders");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 166, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 260, -1));
 
         statusOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,50 +129,7 @@ public class manageOrders extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(statusOrders);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 540, 167));
-
-        jLabel3.setText("Assign DeliveryMan");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 92, -1));
-
-        delDropDown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delDropDownActionPerformed(evt);
-            }
-        });
-        add(delDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 100, -1));
-
-        jLabel4.setText("OrderId");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, 62, -1));
-
-        jLabel5.setText("Customer:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 360, 62, -1));
-
-        delCusto.setEditable(false);
-        delCusto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delCustoActionPerformed(evt);
-            }
-        });
-        add(delCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 360, 100, -1));
-
-        jLabel6.setText("Item");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 360, -1, -1));
-
-        delItem.setEditable(false);
-        add(delItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 360, 84, -1));
-
-        jLabel7.setText("DeliveryMan");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 400, -1, -1));
-
-        add(delList, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 400, 100, -1));
-
-        btnAssignDel.setText("assign");
-        btnAssignDel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignDelActionPerformed(evt);
-            }
-        });
-        add(btnAssignDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 400, -1, -1));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 660, 210));
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +137,127 @@ public class manageOrders extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle2.setText("Manage Orders");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(523, Short.MAX_VALUE)
+                .addComponent(lblTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(521, 521, 521))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        delDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delDropDownActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delDropDown, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 140, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel4.setText("OrderId");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 62, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel5.setText("Customer:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 80, -1));
+
+        delCusto.setEditable(false);
+        delCusto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delCustoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 140, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel6.setText("Item");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+
+        delItem.setEditable(false);
+        jPanel1.add(delItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 140, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel7.setText("DeliveryMan");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
+
+        jPanel1.add(delList, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 140, -1));
+
+        btnAssignDel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAssignDel.setForeground(new java.awt.Color(51, 51, 255));
+        btnAssignDel.setText("assign");
+        btnAssignDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignDelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAssignDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 255));
+
+        lblTitle1.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Assign Delivery Man");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 30));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 420, 460));
+
+        jPanel4.setBackground(new java.awt.Color(0, 51, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 420, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 420, 30));
+
+        lblTitle3.setBackground(new java.awt.Color(0, 51, 255));
+        lblTitle3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblTitle3.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle3.setText("Assign Delivery Man");
+        add(lblTitle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 271, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
@@ -247,13 +336,19 @@ public class manageOrders extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblTitle1;
+    private javax.swing.JLabel lblTitle2;
+    private javax.swing.JLabel lblTitle3;
     private javax.swing.JTable ordersAvailble;
     private javax.swing.JTable statusOrders;
     // End of variables declaration//GEN-END:variables

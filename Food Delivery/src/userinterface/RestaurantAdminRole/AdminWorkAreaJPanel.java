@@ -43,50 +43,78 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         userJButton = new javax.swing.JButton();
         manageMenu = new javax.swing.JButton();
         btnManageOrders = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("My Work Area -Adminstrative Role");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, -1));
-
+        userJButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        userJButton.setForeground(new java.awt.Color(0, 51, 255));
         userJButton.setText("Manage Restaurant Info");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 180, -1));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 440, 200, -1));
 
+        manageMenu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        manageMenu.setForeground(new java.awt.Color(0, 51, 255));
         manageMenu.setText("Manage menu");
         manageMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageMenuActionPerformed(evt);
             }
         });
-        add(manageMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 150, -1));
+        add(manageMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 170, -1));
 
+        btnManageOrders.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnManageOrders.setForeground(new java.awt.Color(0, 51, 255));
         btnManageOrders.setText("Manage Orders");
         btnManageOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrdersActionPerformed(evt);
             }
         });
-        add(btnManageOrders, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
+        add(btnManageOrders, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 170, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(0, 51, 255));
         enterpriseLabel.setText("Restaurant :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 150, 30));
 
+        valueLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(0, 51, 255));
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 130, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 130, 30));
+
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Administrative Role (Restaurant)");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(455, 455, 455)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(537, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
@@ -115,7 +143,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageOrders;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblTitle1;
     private javax.swing.JButton manageMenu;
     private javax.swing.JButton userJButton;
     private javax.swing.JLabel valueLabel;

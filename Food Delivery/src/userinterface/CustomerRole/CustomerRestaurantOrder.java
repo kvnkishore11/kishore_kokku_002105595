@@ -54,18 +54,18 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         restaurantItems = new javax.swing.JTable();
         addToCart = new javax.swing.JButton();
         proceedToCart = new javax.swing.JButton();
         btnViewProfile = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setBackground(new java.awt.Color(255, 153, 204));
-
-        jLabel2.setText("Items Available");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         restaurantItems.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,59 +77,59 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(restaurantItems);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 620, 240));
+
+        addToCart.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        addToCart.setForeground(new java.awt.Color(0, 51, 255));
         addToCart.setText("Add to cart");
         addToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToCartActionPerformed(evt);
             }
         });
+        add(addToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, -1, -1));
 
+        proceedToCart.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        proceedToCart.setForeground(new java.awt.Color(0, 51, 255));
         proceedToCart.setText("Proceed to cart");
         proceedToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 proceedToCartActionPerformed(evt);
             }
         });
+        add(proceedToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 530, -1, -1));
 
+        btnViewProfile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnViewProfile.setForeground(new java.awt.Color(0, 51, 255));
         btnViewProfile.setText("View Profile");
         btnViewProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewProfileActionPerformed(evt);
             }
         });
+        add(btnViewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addToCart)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(proceedToCart))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(97, 97, 97)
-                .addComponent(btnViewProfile)
-                .addContainerGap(761, Short.MAX_VALUE))
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Items Available");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(523, Short.MAX_VALUE)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(521, 521, 521))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel2)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewProfile))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addToCart)
-                    .addComponent(proceedToCart))
-                .addContainerGap(509, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartActionPerformed
@@ -182,8 +182,9 @@ public class CustomerRestaurantOrder extends javax.swing.JPanel {
     private javax.swing.JButton addToCart;
     private javax.swing.JButton btnViewProfile;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
     private javax.swing.JButton proceedToCart;
     private javax.swing.JTable restaurantItems;
     // End of variables declaration//GEN-END:variables

@@ -55,11 +55,13 @@ public class OrdersDelivery extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         deliveryTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         btnAssignToMe = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         deliveryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -71,55 +73,49 @@ public class OrdersDelivery extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(deliveryTable);
 
-        jLabel1.setText("Orders to be delivered");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 870, 290));
 
+        btnAssignToMe.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAssignToMe.setForeground(new java.awt.Color(51, 51, 255));
         btnAssignToMe.setText("Assign to me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignToMeActionPerformed(evt);
             }
         });
+        add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, -1, -1));
 
+        btnProfile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnProfile.setForeground(new java.awt.Color(51, 51, 255));
         btnProfile.setText("View Profile");
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfileActionPerformed(evt);
             }
         });
+        add(btnProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 570, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(409, 409, 409))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(btnAssignToMe)))
-                .addContainerGap(556, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnProfile)
-                .addGap(56, 56, 56))
+        jPanel1.setBackground(new java.awt.Color(36, 47, 65));
+
+        lblTitle1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle1.setText("Orders to be delivered");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(523, Short.MAX_VALUE)
+                .addComponent(lblTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(521, 521, 521))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(btnProfile)
-                .addGap(117, 117, 117)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAssignToMe)
-                .addContainerGap(363, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1300, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToMeActionPerformed
@@ -150,8 +146,9 @@ public class OrdersDelivery extends javax.swing.JPanel {
     private javax.swing.JButton btnAssignToMe;
     private javax.swing.JButton btnProfile;
     private javax.swing.JTable deliveryTable;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle1;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
