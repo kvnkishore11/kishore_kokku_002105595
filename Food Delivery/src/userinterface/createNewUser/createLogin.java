@@ -241,6 +241,15 @@ public class createLogin extends javax.swing.JPanel {
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
         // TODO add your handling code here:
+         if (txtName.getText().isEmpty()
+                || txtUName.getText().isEmpty()
+                || txtPasswd.getText().isEmpty()
+                || txtCnfrmPwd.getText().isEmpty()
+                || txtRestaurantName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please provide all the details of the Customer");
+            return;
+        
+        
         UserAccountDirectory usersList = ecosystem.getUserAccountDirectory();
         String role = (String) roleCmb.getSelectedItem();
         Employee employee = new Employee();
